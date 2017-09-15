@@ -20,10 +20,12 @@ class ViewController: UIViewController {
 		if (birdSegControl.selectedSegmentIndex == 0) {
 			birdImage.image = UIImage(named: "protec")
 			birdLabel.text = "he protec"
+			birdLabel.textColor = UIColor.blue
 		}
 		else if (birdSegControl.selectedSegmentIndex == 1) {
 			birdImage.image = UIImage(named: "attac")
 			birdLabel.text = "he attac"
+			birdLabel.textColor = UIColor.red
 		}
 	}
 	

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "lab2Birds/ViewController.swift"
-            timestampString = "527115494.507585"
+            timestampString = "527126390.36726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "fontSliderAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
