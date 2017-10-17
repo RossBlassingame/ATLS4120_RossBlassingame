@@ -10,13 +10,117 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CSQuestionQuiz/ViewController.swift"
-            timestampString = "528854853.228684"
+            timestampString = "529949722.2374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CSQuestionQuiz/ViewController.swift"
+            timestampString = "529949722.2374"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CSQuestionQuiz/ViewController.swift"
+            timestampString = "529949667.97478"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSQuestionQuiz.ViewController.answer2Outlet.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;"
+                  moduleName = "CSQuestionQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rb/GoogleDrive/School/Classes/Fall2017/ATLS4120/ATLS4120_RossBlassingame/Project/CSQuestionQuiz/CSQuestionQuiz/ViewController.swift"
+                  timestampString = "529948826.734007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSQuestionQuiz.ViewController.answer2Outlet.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;"
+                  moduleName = "CSQuestionQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rb/GoogleDrive/School/Classes/Fall2017/ATLS4120/ATLS4120_RossBlassingame/Project/CSQuestionQuiz/CSQuestionQuiz/ViewController.swift"
+                  timestampString = "529948826.736396"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSQuestionQuiz.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; CSQuestionQuiz.ViewController"
+                  moduleName = "CSQuestionQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rb/GoogleDrive/School/Classes/Fall2017/ATLS4120/ATLS4120_RossBlassingame/Project/CSQuestionQuiz/CSQuestionQuiz/ViewController.swift"
+                  timestampString = "529948826.738969"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "297">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CSQuestionQuiz.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;CSQuestionQuiz.ViewController&gt;"
+                  moduleName = "CSQuestionQuiz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rb/GoogleDrive/School/Classes/Fall2017/ATLS4120/ATLS4120_RossBlassingame/Project/CSQuestionQuiz/CSQuestionQuiz/ViewController.swift"
+                  timestampString = "529948826.741478"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "222">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
