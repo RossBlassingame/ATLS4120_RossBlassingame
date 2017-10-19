@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var numberOfMins: UILabel!
 	@IBOutlet weak var numberOfGallons: UILabel!
 	@IBOutlet weak var currentNumberOfGallons: UILabel!
+	@IBOutlet weak var monthlySwitch: UISwitch!
+	
 	@IBAction func calculateTimeAndGas(_ sender: UIButton) {
 		if (roundTripMiles.text != "") {
 			numberOfMins.text = String(((Double(roundTripMiles.text!)!)/20)*60) + " mins"
@@ -23,6 +25,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	@IBAction func gasSliderAction(_ sender: UISlider) {
 		let gallons = sender.value
 		currentNumberOfGallons.text = String(format: "%.0f", gallons) + " gallons"
+	}
+	
+	func updateMonthlyVsDaily() {
+		if (monthlySwitch.isOn) {
+			numberOfMins.text = String((((Double(roundTripMiles.text!)!)/20)*60)*20) + " mins"
+			numberOfGallons.text = String(((Double(roundTripMiles.text!)!)/24)*20) + " gallons"
+		}
+		else  {
+			numberOfMins.text = String(((Double(roundTripMiles.text!)!)/20)*60) + " mins"
+			numberOfGallons.text = String((Double(roundTripMiles.text!)!)/24) + " gallons"
+		}
+	}
+	@IBAction func monthlySwitchFlipped(_ sender: UISwitch) {
+		updateMonthlyVsDaily()
 	}
 
 	

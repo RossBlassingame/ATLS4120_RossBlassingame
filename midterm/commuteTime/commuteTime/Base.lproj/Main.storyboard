@@ -118,15 +118,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fw-t6-kNS">
+                                <rect key="frame" x="128" y="287" width="119.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-iY-Iew">
+                                        <rect key="frame" x="0.0" y="0.0" width="70.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X3e-v9-gRa">
+                                        <rect key="frame" x="70.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="monthlySwitchFlipped:" destination="BYZ-38-t0r" eventType="valueChanged" id="yNa-2h-oIn"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9op-pE-7wV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="73" id="35y-hu-hJO"/>
+                            <constraint firstItem="7fw-t6-kNS" firstAttribute="top" secondItem="T9v-DH-8b6" secondAttribute="bottom" constant="7.5" id="7GT-vr-P4p"/>
                             <constraint firstItem="VeD-od-2Ct" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="221" id="DSr-3O-xhL"/>
                             <constraint firstItem="ApE-da-4po" firstAttribute="top" secondItem="Xeh-ws-d7B" secondAttribute="bottom" constant="8" id="FTt-K1-YaT"/>
                             <constraint firstAttribute="bottom" secondItem="9op-pE-7wV" secondAttribute="bottom" constant="482" id="GzE-WD-9ii"/>
                             <constraint firstItem="Xeh-ws-d7B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SY0-4f-xM0"/>
                             <constraint firstItem="Xeh-ws-d7B" firstAttribute="top" secondItem="Wl5-fG-IKR" secondAttribute="bottom" constant="8" id="Xcw-CR-mWr"/>
+                            <constraint firstItem="7fw-t6-kNS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aIN-gd-Nj2"/>
                             <constraint firstItem="T9v-DH-8b6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dZg-vc-mMt"/>
                             <constraint firstItem="Wl5-fG-IKR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dng-3z-KRY"/>
                             <constraint firstItem="VeD-od-2Ct" firstAttribute="top" secondItem="7sE-2o-48p" secondAttribute="bottom" constant="7.5" id="eqb-Ea-XFc"/>
@@ -145,6 +164,7 @@
                     </view>
                     <connections>
                         <outlet property="currentNumberOfGallons" destination="T9v-DH-8b6" id="tda-ed-Vyh"/>
+                        <outlet property="monthlySwitch" destination="X3e-v9-gRa" id="Znb-7a-hq9"/>
                         <outlet property="numberOfGallons" destination="odA-Ky-krN" id="Az1-N2-A5J"/>
                         <outlet property="numberOfMins" destination="0fZ-uI-2de" id="sb3-pj-JnA"/>
                         <outlet property="roundTripMiles" destination="sko-nS-9rK" id="3EA-on-u9C"/>
