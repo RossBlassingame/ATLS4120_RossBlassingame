@@ -8,11 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
+	
+	@IBOutlet weak var roundTripMiles: UITextField!
 
 	override func viewDidLoad() {
-		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		super.viewDidLoad()
+		self.roundTripMiles.delegate = self as UITextFieldDelegate
+	}
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		self.view.endEditing(true)
+	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		roundTripMiles.resignFirstResponder()
+		return (true)
 	}
 
 	override func didReceiveMemoryWarning() {
