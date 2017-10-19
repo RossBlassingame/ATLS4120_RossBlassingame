@@ -47,14 +47,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	@IBAction func monthlySwitchFlipped(_ sender: UISwitch) {
-		updateMonthlyVsDaily()
+		updateCommuteAndGasFromSegControl()
 	}
 	
 	func updateCommuteAndGasFromSegControl() {
 		if (carBikeBusSegmentedControl.selectedSegmentIndex == 0) {
 			if (monthlySwitch.isOn) {
 				numberOfMins.text = String((((Double(roundTripMiles.text!)!)/20)*20)*60) + " mins"
-				numberOfGallons.text = String((Double(roundTripMiles.text!)!)/24) + " gallons"
+				numberOfGallons.text = String(((Double(roundTripMiles.text!)!)/24)*20) + " gallons"
 				vehicleImage.image = UIImage(named: "car_icon")
 			}
 			else {
