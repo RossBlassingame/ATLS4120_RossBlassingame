@@ -45,27 +45,20 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ApE-da-4po">
-                                <rect key="frame" x="152.5" y="96" width="69" height="30"/>
-                                <state key="normal" title="Calculate!"/>
-                                <connections>
-                                    <action selector="calculateTimeAndGas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DYe-VM-eEa"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9op-pE-7wV">
                                 <rect key="frame" x="89" y="134" width="196" height="51"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4U-Em-FI8">
-                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="51"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commute Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9X-3w-VrD">
-                                                <rect key="frame" x="0.0" y="0.0" width="126.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="127" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gas Needed: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2u-US-660">
-                                                <rect key="frame" x="0.0" y="30.5" width="126.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="30.5" width="127" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -73,16 +66,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qxF-xM-3jz">
-                                        <rect key="frame" x="126.5" y="0.0" width="69.5" height="51"/>
+                                        <rect key="frame" x="127" y="0.0" width="69" height="51"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0 mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fZ-uI-2de">
-                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0 mins                    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fZ-uI-2de">
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="rvz-Ah-rVg"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 gallons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odA-Ky-krN">
-                                                <rect key="frame" x="0.0" y="30.5" width="69.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="30.5" width="69" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -90,22 +86,65 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="qxF-xM-3jz" firstAttribute="leading" secondItem="9op-pE-7wV" secondAttribute="leading" constant="127" id="SBa-52-FOZ"/>
+                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ApE-da-4po">
+                                <rect key="frame" x="153" y="96" width="69" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="269-IW-T8e"/>
+                                </constraints>
+                                <state key="normal" title="Calculate!"/>
+                                <connections>
+                                    <action selector="calculateTimeAndGas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DYe-VM-eEa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much gas you have:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-2o-48p">
+                                <rect key="frame" x="92" y="193" width="191" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="VeD-od-2Ct">
+                                <rect key="frame" x="14" y="221" width="347" height="31"/>
+                                <connections>
+                                    <action selector="gasSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="lLG-NZ-iNF"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9v-DH-8b6">
+                                <rect key="frame" x="153" y="259" width="69.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9op-pE-7wV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="73" id="35y-hu-hJO"/>
+                            <constraint firstItem="VeD-od-2Ct" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="221" id="DSr-3O-xhL"/>
                             <constraint firstItem="ApE-da-4po" firstAttribute="top" secondItem="Xeh-ws-d7B" secondAttribute="bottom" constant="8" id="FTt-K1-YaT"/>
+                            <constraint firstAttribute="bottom" secondItem="9op-pE-7wV" secondAttribute="bottom" constant="482" id="GzE-WD-9ii"/>
                             <constraint firstItem="Xeh-ws-d7B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SY0-4f-xM0"/>
                             <constraint firstItem="Xeh-ws-d7B" firstAttribute="top" secondItem="Wl5-fG-IKR" secondAttribute="bottom" constant="8" id="Xcw-CR-mWr"/>
+                            <constraint firstItem="T9v-DH-8b6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dZg-vc-mMt"/>
                             <constraint firstItem="Wl5-fG-IKR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dng-3z-KRY"/>
+                            <constraint firstItem="VeD-od-2Ct" firstAttribute="top" secondItem="7sE-2o-48p" secondAttribute="bottom" constant="7.5" id="eqb-Ea-XFc"/>
+                            <constraint firstItem="7sE-2o-48p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fzr-Pa-8ra"/>
+                            <constraint firstItem="T9v-DH-8b6" firstAttribute="top" secondItem="VeD-od-2Ct" secondAttribute="bottom" constant="8" id="iqj-9V-GcM"/>
                             <constraint firstItem="9op-pE-7wV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jT5-hd-lKL"/>
+                            <constraint firstItem="7sE-2o-48p" firstAttribute="top" secondItem="y4U-Em-FI8" secondAttribute="bottom" constant="8" id="o6P-Sf-8ee"/>
+                            <constraint firstItem="VeD-od-2Ct" firstAttribute="leading" secondItem="Wl5-fG-IKR" secondAttribute="leading" id="oUd-zJ-FFf"/>
                             <constraint firstItem="Wl5-fG-IKR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oif-pp-1WC"/>
                             <constraint firstItem="ApE-da-4po" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="piJ-Aj-lg4"/>
+                            <constraint firstItem="VeD-od-2Ct" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rlL-pI-Ln0"/>
+                            <constraint firstItem="ApE-da-4po" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="96" id="uXj-Kp-Afs"/>
                             <constraint firstItem="9op-pE-7wV" firstAttribute="top" secondItem="ApE-da-4po" secondAttribute="bottom" constant="8" id="xgc-r6-bRU"/>
                             <constraint firstItem="Wl5-fG-IKR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yCd-oW-qiP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentNumberOfGallons" destination="T9v-DH-8b6" id="tda-ed-Vyh"/>
                         <outlet property="numberOfGallons" destination="odA-Ky-krN" id="Az1-N2-A5J"/>
                         <outlet property="numberOfMins" destination="0fZ-uI-2de" id="sb3-pj-JnA"/>
                         <outlet property="roundTripMiles" destination="sko-nS-9rK" id="3EA-on-u9C"/>

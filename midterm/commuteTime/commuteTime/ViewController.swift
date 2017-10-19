@@ -13,11 +13,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var roundTripMiles: UITextField!
 	@IBOutlet weak var numberOfMins: UILabel!
 	@IBOutlet weak var numberOfGallons: UILabel!
+	@IBOutlet weak var currentNumberOfGallons: UILabel!
 	@IBAction func calculateTimeAndGas(_ sender: UIButton) {
 		if (roundTripMiles.text != "") {
 			numberOfMins.text = String(((Double(roundTripMiles.text!)!)/20)*60) + " mins"
 			numberOfGallons.text = String((Double(roundTripMiles.text!)!)/24) + " gallons"
 		}
+	}
+	@IBAction func gasSliderAction(_ sender: UISlider) {
+		let gallons = sender.value
+		currentNumberOfGallons.text = String(format: "%.0f", gallons) + " gallons"
 	}
 
 	
