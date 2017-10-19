@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wl5-fG-IKR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commute Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wl5-fG-IKR">
                                 <rect key="frame" x="16" y="20" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -31,7 +31,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-ws-d7B">
                                 <rect key="frame" x="29" y="58" width="317.5" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round-trip cummute miles: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="put-fc-2wm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round-trip commute miles: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="put-fc-2wm">
                                         <rect key="frame" x="0.0" y="0.0" width="212.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -45,17 +45,69 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ApE-da-4po">
+                                <rect key="frame" x="152.5" y="96" width="69" height="30"/>
+                                <state key="normal" title="Calculate!"/>
+                                <connections>
+                                    <action selector="calculateTimeAndGas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DYe-VM-eEa"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9op-pE-7wV">
+                                <rect key="frame" x="89" y="134" width="196" height="51"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4U-Em-FI8">
+                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="51"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commute Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9X-3w-VrD">
+                                                <rect key="frame" x="0.0" y="0.0" width="126.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gas Needed: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2u-US-660">
+                                                <rect key="frame" x="0.0" y="30.5" width="126.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qxF-xM-3jz">
+                                        <rect key="frame" x="126.5" y="0.0" width="69.5" height="51"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0 mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fZ-uI-2de">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 gallons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odA-Ky-krN">
+                                                <rect key="frame" x="0.0" y="30.5" width="69.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ApE-da-4po" firstAttribute="top" secondItem="Xeh-ws-d7B" secondAttribute="bottom" constant="8" id="FTt-K1-YaT"/>
                             <constraint firstItem="Xeh-ws-d7B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SY0-4f-xM0"/>
                             <constraint firstItem="Xeh-ws-d7B" firstAttribute="top" secondItem="Wl5-fG-IKR" secondAttribute="bottom" constant="8" id="Xcw-CR-mWr"/>
                             <constraint firstItem="Wl5-fG-IKR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dng-3z-KRY"/>
+                            <constraint firstItem="9op-pE-7wV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jT5-hd-lKL"/>
                             <constraint firstItem="Wl5-fG-IKR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oif-pp-1WC"/>
+                            <constraint firstItem="ApE-da-4po" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="piJ-Aj-lg4"/>
+                            <constraint firstItem="9op-pE-7wV" firstAttribute="top" secondItem="ApE-da-4po" secondAttribute="bottom" constant="8" id="xgc-r6-bRU"/>
                             <constraint firstItem="Wl5-fG-IKR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yCd-oW-qiP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="numberOfGallons" destination="odA-Ky-krN" id="Az1-N2-A5J"/>
+                        <outlet property="numberOfMins" destination="0fZ-uI-2de" id="sb3-pj-JnA"/>
                         <outlet property="roundTripMiles" destination="sko-nS-9rK" id="3EA-on-u9C"/>
                     </connections>
                 </viewController>
