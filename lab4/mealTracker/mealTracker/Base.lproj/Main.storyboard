@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A405" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mealTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaM-hb-KCk">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ScC-n6-0QB"/>
+                                    <barButtonItem title="Add Meal" id="doU-Og-yQI">
+                                        <connections>
+                                            <segue destination="C5Y-lU-lsp" kind="presentation" identifier="" id="IAh-gx-zTa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Meals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhB-s7-cEU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5I-WD-lir">
+                                <rect key="frame" x="16" y="304" width="343" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JaM-hb-KCk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0sa-X6-8QW"/>
+                            <constraint firstAttribute="trailing" secondItem="KhB-s7-cEU" secondAttribute="trailing" id="1jg-CT-Tb8"/>
+                            <constraint firstAttribute="trailing" secondItem="JaM-hb-KCk" secondAttribute="trailing" id="U92-b7-aUD"/>
+                            <constraint firstItem="KhB-s7-cEU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="g5M-7g-mU2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JaM-hb-KCk" secondAttribute="bottom" id="pYj-H1-Mna"/>
+                            <constraint firstItem="KhB-s7-cEU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zKX-ow-fuv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mealLabel" destination="d5I-WD-lir" id="KCE-UH-GyZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
+        </scene>
+        <!--Scene2 View Controller-->
+        <scene sceneID="hL1-eu-FCB">
+            <objects>
+                <viewController id="C5Y-lU-lsp" customClass="Scene2ViewController" customModule="mealTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YpW-3L-x1r"/>
+                        <viewControllerLayoutGuide type="bottom" id="R0s-5p-uaz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2NK-Ix-V1L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Meal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6um-ph-J87">
+                                <rect key="frame" x="0.0" y="20" width="375" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZQs-9Y-Oug">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SyU-Xe-KY6"/>
+                                    <barButtonItem title="Done" id="TNa-8i-aMN">
+                                        <connections>
+                                            <segue destination="uvV-jM-Fr8" kind="unwind" identifier="unwindSeg" unwindAction="unwindSegue:" id="DKp-1a-NPy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="HaZ-8u-Y0Y">
+                                <rect key="frame" x="120.5" y="318" width="134" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bl-N0-v94">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="InP-af-M8B">
+                                        <rect key="frame" x="92" y="0.0" width="42" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HaZ-8u-Y0Y" firstAttribute="centerX" secondItem="2NK-Ix-V1L" secondAttribute="centerX" id="FmM-81-zw6"/>
+                            <constraint firstItem="6um-ph-J87" firstAttribute="top" secondItem="YpW-3L-x1r" secondAttribute="bottom" id="G7q-c3-cjS"/>
+                            <constraint firstItem="HaZ-8u-Y0Y" firstAttribute="centerY" secondItem="2NK-Ix-V1L" secondAttribute="centerY" id="KkA-bK-AY4"/>
+                            <constraint firstItem="6um-ph-J87" firstAttribute="leading" secondItem="2NK-Ix-V1L" secondAttribute="leading" id="SpC-kP-18W"/>
+                            <constraint firstAttribute="trailing" secondItem="6um-ph-J87" secondAttribute="trailing" id="fIc-hH-Jvt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userMeal" destination="InP-af-M8B" id="yLD-eq-ow0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NxI-7i-cfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uvV-jM-Fr8" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="752.79999999999995" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
