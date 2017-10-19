@@ -15,9 +15,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var numberOfGallons: UILabel!
 	@IBOutlet weak var currentNumberOfGallons: UILabel!
 	@IBOutlet weak var monthlySwitch: UISwitch!
+	@IBOutlet weak var carBikeBusSegmentedControl: UISegmentedControl!
+	@IBOutlet weak var vehicleImage: UIImageView!
 	
 	@IBAction func calculateTimeAndGas(_ sender: UIButton) {
 		if (roundTripMiles.text != "") {
+			if ((Double(roundTripMiles.text!)!) > 50) {
+				let alert = UIAlertController(title: "Over 50 Miles", message: "You're going over 50 miles!", preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+					NSLog("The \"OK\" alert occured.")
+				}))
+				self.present(alert, animated: true, completion: nil)
+			}
 			numberOfMins.text = String(((Double(roundTripMiles.text!)!)/20)*60) + " mins"
 			numberOfGallons.text = String((Double(roundTripMiles.text!)!)/24) + " gallons"
 		}
@@ -39,6 +48,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	}
 	@IBAction func monthlySwitchFlipped(_ sender: UISwitch) {
 		updateMonthlyVsDaily()
+	}
+	
+	func updateCommuteAndGasFromSegControl() {
+		if (carBikeBusSegmentedControl.selectedSegmentIndex == 0) {
+			if (monthlySwitch.isOn) {
+				numberOfMins.text = String(((Double(roundTripMiles.text!)!)/20)*60) + " mins"
+				numberOfGallons.text = String((Double(roundTripMiles.text!)!)/24) + " gallons"
+				vehicleImage.image = UIImage(named: "car_icon")
+			}
+			else {
+				
+			}
+		}
+		else if (carBikeBusSegmentedControl.selectedSegmentIndex == 1) {
+			if (monthlySwitch.isOn) {
+				numberOfMins.text = String(((Double(roundTripMiles.text!)!)/10)*60) + " mins"
+				numberOfGallons.text = "0 gallons"
+				vehicleImage.image = UIImage(named: "bike_icon")
+			}
+		}
+		else if (carBikeBusSegmentedControl.selectedSegmentIndex == 2) {
+			numberOfMins.text = String((((Double(roundTripMiles.text!)!)/12)*60)+10) + " mins"
+			numberOfGallons.text = "0 gallons"
+			vehicleImage.image = UIImage(named: "bus_icon")
+		}
+	}
+	@IBAction func carBikeBusSegFlipped(_ sender: UISegmentedControl) {
+		updateCommuteAndGasFromSegControl()
+		//updateMonthlyVsDaily()
 	}
 
 	
