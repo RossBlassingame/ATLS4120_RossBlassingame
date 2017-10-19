@@ -53,25 +53,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	func updateCommuteAndGasFromSegControl() {
 		if (carBikeBusSegmentedControl.selectedSegmentIndex == 0) {
 			if (monthlySwitch.isOn) {
-				numberOfMins.text = String(((Double(roundTripMiles.text!)!)/20)*60) + " mins"
+				numberOfMins.text = String((((Double(roundTripMiles.text!)!)/20)*20)*60) + " mins"
 				numberOfGallons.text = String((Double(roundTripMiles.text!)!)/24) + " gallons"
 				vehicleImage.image = UIImage(named: "car_icon")
 			}
 			else {
-				
+				numberOfMins.text = String(((Double(roundTripMiles.text!)!)/20)*60) + " mins"
+				numberOfGallons.text = String((Double(roundTripMiles.text!)!)/24) + " gallons"
+				vehicleImage.image = UIImage(named: "car_icon")
 			}
 		}
 		else if (carBikeBusSegmentedControl.selectedSegmentIndex == 1) {
 			if (monthlySwitch.isOn) {
-				numberOfMins.text = String(((Double(roundTripMiles.text!)!)/10)*60) + " mins"
+				numberOfMins.text = String((((Double(roundTripMiles.text!)!)/10)*60)*20) + " mins"
+				numberOfGallons.text = "0 gallons"
+				vehicleImage.image = UIImage(named: "bike_icon")
+			}
+			else {
+				numberOfMins.text = String((((Double(roundTripMiles.text!)!)/10)*60)) + " mins"
 				numberOfGallons.text = "0 gallons"
 				vehicleImage.image = UIImage(named: "bike_icon")
 			}
 		}
 		else if (carBikeBusSegmentedControl.selectedSegmentIndex == 2) {
-			numberOfMins.text = String((((Double(roundTripMiles.text!)!)/12)*60)+10) + " mins"
-			numberOfGallons.text = "0 gallons"
-			vehicleImage.image = UIImage(named: "bus_icon")
+			if (monthlySwitch.isOn) {
+				numberOfMins.text = String(((((Double(roundTripMiles.text!)!)/12)*60)*20)+10) + " mins"
+				numberOfGallons.text = "0 gallons"
+				vehicleImage.image = UIImage(named: "bus_icon")
+			}
+			else {
+				numberOfMins.text = String(((((Double(roundTripMiles.text!)!)/12)*60))+10) + " mins"
+				numberOfGallons.text = "0 gallons"
+				vehicleImage.image = UIImage(named: "bus_icon")
+			}
 		}
 	}
 	@IBAction func carBikeBusSegFlipped(_ sender: UISegmentedControl) {
