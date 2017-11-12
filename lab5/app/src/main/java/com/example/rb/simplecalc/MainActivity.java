@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.content.Context;
+import android.widget.Toast;
 
 import static com.example.rb.simplecalc.R.id.txtNumber;
 
@@ -45,26 +47,49 @@ public class MainActivity extends AppCompatActivity {
         Integer num = Integer.parseInt(numView.getText().toString());
         if (view.getId() == R.id.btnAddOne) {
             num += 1;
+            makeToast("+", 1);
         }
         else if (view.getId() == R.id.btnAddTwo) {
             num += 2;
+            makeToast("+", 2);
         }
         else if (view.getId() == R.id.btnAddThree) {
             num += 3;
+            makeToast("+", 3);
         }
         else if (view.getId() == R.id.btnTimesZero) {
             num = 0;
+            makeToast("*", 0);
         }
         else if (view.getId() == R.id.btnTimesTwo) {
             num *= 2;
+            makeToast("*", 2);
         }
         else if (view.getId() == R.id.btnTimesThree) {
             num *= 3;
+            makeToast("*", 3);
         }
         else {
             num = 999;
         }
 
         numView.setText(num+"");
+    }
+
+    public void makeToast(String op, Integer num) {
+        Context context = getApplicationContext();
+        String opText = "";
+        if (op == "+") {
+            opText = "Added ";
+        }
+        else if (op == "*") {
+            opText = "Multiplied by ";
+        }
+        int duration = Toast.LENGTH_SHORT;
+
+        String text = opText + num.toString();
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 }
