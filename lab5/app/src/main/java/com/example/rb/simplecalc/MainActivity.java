@@ -3,15 +3,11 @@ package com.example.rb.simplecalc;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.content.Context;
 import android.widget.Toast;
-
-import static com.example.rb.simplecalc.R.id.txtNumber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,12 +22,20 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonTimesZero = (Button) findViewById(R.id.btnTimesZero);
         final Button buttonTimesTwo = (Button) findViewById(R.id.btnTimesTwo);
         final Button buttonTimesThree = (Button) findViewById(R.id.btnTimesThree);
+        final Button buttonResult = (Button) findViewById(R.id.viewResultButton);
         //create listener
         View.OnClickListener onclick = new View.OnClickListener(){
             public void onClick(View view){
                 updateButton(view);
             }
         };
+
+        View.OnClickListener onclick1 = new View.OnClickListener(){
+            public void onClick(View view){
+                updateResultPageHelperFunction(view);
+            }
+        };
+
         //add listener to the button
         buttonAddOne.setOnClickListener(onclick);
         buttonAddTwo.setOnClickListener(onclick);
@@ -39,8 +43,19 @@ public class MainActivity extends AppCompatActivity {
         buttonTimesZero.setOnClickListener(onclick);
         buttonTimesTwo.setOnClickListener(onclick);
         buttonTimesThree.setOnClickListener(onclick);
+        buttonResult.setOnClickListener(onclick1);
     }
 
+    public void updateResultPageHelperFunction(View view) {
+        TextView numView = (TextView) findViewById(R.id.txtNumber);
+        Integer result = Integer.parseInt(numView.getText().toString());
+        String resultString = numView.getText().toString();
+
+        Intent intent = new Intent(this, ResultPageActivity.class);
+        intent.putExtra("result", resultString);
+
+        startActivity(intent);
+    }
 
     public void updateButton(View view){
         TextView numView = (TextView) findViewById(R.id.txtNumber);
