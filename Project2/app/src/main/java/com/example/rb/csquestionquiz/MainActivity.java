@@ -21,18 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         View.OnClickListener onclick = new View.OnClickListener(){
             public void onClick(View view){
-                switch (view.getId()) {
-                    case R.id.button1:
-                        parseUserAnswer(view, 1);
-                    case R.id.button2:
-                        parseUserAnswer(view, 2);
-                    case R.id.button3:
-                        parseUserAnswer(view, 3);
-                    case R.id.button4:
-                        parseUserAnswer(view, 4);
-                    default:
-                        break;
-                }
+                parseUserAnswer(view);
             }
         };
 
@@ -53,10 +42,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void parseUserAnswer(View view, int buttonNumber) {
-
+    public void parseUserAnswer(View view) {
+        int buttonNumber = 0;
         int correctAnswer = 0;
-        Log.i("key", String.valueOf(key));
+
+        switch (view.getId()) {
+            case R.id.button1:
+                buttonNumber = 1;
+            case R.id.button2:
+                buttonNumber = 2;
+            case R.id.button3:
+                buttonNumber = 3;
+            case R.id.button4:
+                buttonNumber = 4;
+            default:
+                break;
+        }
+
         if (questionMap.containsKey(String.valueOf(key))) {
             correctAnswer = Integer.parseInt(questionMap.get(String.valueOf(key))[5]);
 
@@ -73,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             updateText();
+            key = -1;
         }
+        key++;
     }
 
     public void updateText() {
