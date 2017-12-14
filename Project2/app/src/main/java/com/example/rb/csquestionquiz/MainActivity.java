@@ -9,11 +9,6 @@ import android.widget.TextView;
 import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
-    final Button answerButton1 = (Button) findViewById(R.id.button1);
-    final Button answerButton2 = (Button) findViewById(R.id.button2);
-    final Button answerButton3 = (Button) findViewById(R.id.button3);
-    final Button answerButton4 = (Button) findViewById(R.id.button4);
-    TextView questionText = (TextView) findViewById(R.id.questionText);
 
     Map<String, String[]> questionMap = new HashMap<String, String[]>();
     int totalScore = 0;
@@ -26,11 +21,28 @@ public class MainActivity extends AppCompatActivity {
 
         View.OnClickListener onclick = new View.OnClickListener(){
             public void onClick(View view){
-                parseUserAnswer(view);
+                switch (view.getId()) {
+                    case R.id.button1:
+                        parseUserAnswer(view, 1);
+                    case R.id.button2:
+                        parseUserAnswer(view, 2);
+                    case R.id.button3:
+                        parseUserAnswer(view, 3);
+                    case R.id.button4:
+                        parseUserAnswer(view, 4);
+                    default:
+                        break;
+                }
             }
         };
 
         addQuestionsToMap();
+
+        final Button answerButton1 = (Button) findViewById(R.id.button1);
+        final Button answerButton2 = (Button) findViewById(R.id.button2);
+        final Button answerButton3 = (Button) findViewById(R.id.button3);
+        final Button answerButton4 = (Button) findViewById(R.id.button4);
+        TextView questionText = (TextView) findViewById(R.id.questionText);
 
         answerButton1.setOnClickListener(onclick);
         answerButton2.setOnClickListener(onclick);
@@ -41,42 +53,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void parseUserAnswer(View view) {
+    public void parseUserAnswer(View view, int buttonNumber) {
 
         int correctAnswer = 0;
+        Log.i("key", String.valueOf(key));
         if (questionMap.containsKey(String.valueOf(key))) {
             correctAnswer = Integer.parseInt(questionMap.get(String.valueOf(key))[5]);
-        }
-        switch (view.getId()) {
-            case R.id.button1:
-                if (correctAnswer == 1) {
-                    totalScore++;
-                }
-            case R.id.button2:
-                Log.i("view.getId()", String.valueOf(view.getId()));
-                Log.i("R.id.button2", String.valueOf(R.id.button2));
-                if (correctAnswer == 2) {
-                    totalScore++;
-                }
-            case R.id.button3:
-                if (correctAnswer == 3) {
-                    totalScore++;
-                }
-            case R.id.button4:
-                if (correctAnswer == 4) {
-                    totalScore++;
-                }
-            default:
-                break;
-        }
-        if (!questionMap.containsKey(String.valueOf(key))) {
-            updateText();
-            key = 0;
-            totalScore = 0;
+
+            // Correct answer.
+            if (correctAnswer == buttonNumber) {
+                // User answer is correct.
+                totalScore++;
+                updateText();
+            }
+            // Wrong answer.
+            else {
+                updateText();
+            }
         }
         else {
             updateText();
-            key++;
         }
     }
 
