@@ -111,5 +111,45 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <CheckBox
+        android:id="@+id/salsaCheckBox"
+        android:layout_width="171dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/salsa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meatVeggieToggle" />
+
+    <CheckBox
+        android:id="@+id/cheeseCheckBox"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/cheese"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meatVeggieToggle" />
+
+    <CheckBox
+        android:id="@+id/sourCreamCheckBox"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/sourCream"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salsaCheckBox" />
+
+    <CheckBox
+        android:id="@+id/guacCheckBox"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/guac"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cheeseCheckBox" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -65,8 +66,25 @@ public class MainActivity extends AppCompatActivity {
         String tacoOrBurrito = "";
         String whereToEat = "";
         String restaurant = "";
+        String salsaText = "";
+        String guacText = "";
+        String sourCreamText = "";
+        String cheeseText = "";
 
         TextView burritoDetailTextView = (TextView) findViewById(R.id.burritoDetailTextView);
+
+        //check boxes
+        CheckBox cheeseCheckBox = (CheckBox) findViewById(R.id.cheeseCheckBox);
+        Boolean cheese = cheeseCheckBox.isChecked();
+
+        CheckBox sourCreamCheckBox = (CheckBox) findViewById(R.id.sourCreamCheckBox);
+        Boolean sourCream = sourCreamCheckBox.isChecked();
+
+        CheckBox salsaCheckBox = (CheckBox) findViewById(R.id.salsaCheckBox);
+        Boolean salsa = salsaCheckBox.isChecked();
+
+        CheckBox guacCheckBox = (CheckBox) findViewById(R.id.guacCheckBox);
+        Boolean guac = guacCheckBox.isChecked();
 
         //toggle button
         ToggleButton toggle = (ToggleButton) findViewById(R.id.meatVeggieToggle);
@@ -114,8 +132,23 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+        // Get toppings
+        if (salsa) {
+            salsaText = " salsa ";
+        }
+        if (sourCream) {
+            sourCreamText = " sourCream ";
+        }
+        if (guac) {
+            guacText = " guac ";
+        }
+        if (cheese) {
+            cheeseText = " cheese ";
+        }
+
         burritoDetailTextView.setText("You've chosen a " + meatOrVeggie + " " + tacoOrBurrito +
-                ". Since you want to eat it near " + whereToEat + ", you should go to "
-                + restaurant + ".");
+                " with the following toppings: " + salsaText + sourCreamText + guacText +
+                cheeseText + "." + "\nSince you want to eat it near " + whereToEat +
+                ", you should go to " + restaurant + ".");
     }
 }

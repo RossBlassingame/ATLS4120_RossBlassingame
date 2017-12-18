@@ -4,6 +4,10 @@
     <string name="toggle_on">Meat</string>
     <string name="toggle_off">Veggie</string>
     <string name="radioTaco">Taco</string>
+    <string name="salsa">Salsa</string>
+    <string name="cheese">Cheese</string>
+    <string name="sourCream">Sour Cream</string>
+    <string name="guac">Guac</string>
     <string name="radioBurrito">Burrito</string>
     <string name="generateButton">Generate Burrito!</string>
     <string name="burritoBuilder">Burrito Builder</string>
