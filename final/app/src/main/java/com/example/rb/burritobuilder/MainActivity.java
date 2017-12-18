@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         String meatOrVeggie = "";
         String tacoOrBurrito = "";
         String whereToEat = "";
+        String restaurant = "";
 
         TextView burritoDetailTextView = (TextView) findViewById(R.id.burritoDetailTextView);
 
@@ -69,12 +70,17 @@ public class MainActivity extends AppCompatActivity {
         switch (location) {
             case "The Hill":
                 whereToEat = "The Hill";
+                restaurant = "Illegal Pete's";
             case "29th Street":
                 whereToEat = "29th Street";
+                restaurant = "Chipotle";
             case "Pearl Street":
                 whereToEat = "Pearl Street";
+                restaurant = "Bartaco";
         }
 
-        burritoDetailTextView.setText("You've chosen a " + meatOrVeggie + " " + tacoOrBurrito + ". You should eat it at " + whereToEat + ".");
+        burritoDetailTextView.setText("You've chosen a " + meatOrVeggie + " " + tacoOrBurrito +
+                ". Since you want to eat it near " + whereToEat + ", you should go to "
+                + restaurant + ".");
     }
 }
