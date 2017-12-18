@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewInNewWindow(View view) {
-        String whereToEat = "";
         String restaurant = "";
 
         //spinner
@@ -45,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
         // Get location
         switch (location) {
             case "The Hill":
-                whereToEat = "The Hill";
                 restaurant = "Illegal Pete's";
+                break;
             case "29th Street":
-                whereToEat = "29th Street";
                 restaurant = "Chipotle";
+                break;
             case "Pearl Street":
-                whereToEat = "Pearl Street";
                 restaurant = "Bartaco";
+                break;
         }
 
         Intent intent = new Intent(this, ResultPageActivity.class);
@@ -74,14 +73,12 @@ public class MainActivity extends AppCompatActivity {
         boolean toggleLocation = toggle.isChecked();
 
         //spinner
-        Spinner exercise = (Spinner) findViewById(R.id.spinner);
-        String location = String.valueOf(exercise.getSelectedItem());
+        Spinner loc = (Spinner) findViewById(R.id.spinner);
+        String location = String.valueOf(loc.getSelectedItem());
 
         //radio buttons
         RadioGroup cost = (RadioGroup) findViewById(R.id.radioGroup);
         int cost_id = cost.getCheckedRadioButtonId();
-
-
 
         // Check taco vs. burrito
         //Veggie
@@ -106,12 +103,15 @@ public class MainActivity extends AppCompatActivity {
             case "The Hill":
                 whereToEat = "The Hill";
                 restaurant = "Illegal Pete's";
+                break;
             case "29th Street":
                 whereToEat = "29th Street";
                 restaurant = "Chipotle";
+                break;
             case "Pearl Street":
                 whereToEat = "Pearl Street";
                 restaurant = "Bartaco";
+                break;
         }
 
         burritoDetailTextView.setText("You've chosen a " + meatOrVeggie + " " + tacoOrBurrito +
