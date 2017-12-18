@@ -1,5 +1,6 @@
 package com.example.rb.burritobuilder;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,9 +22,43 @@ public class MainActivity extends AppCompatActivity {
                 generateBurrito(view);
             }
         };
+        View.OnClickListener onclick1 = new View.OnClickListener(){
+            public void onClick(View view){
+                viewInNewWindow(view);
+            }
+        };
 
         final Button generateButton = (Button) findViewById(R.id.generateButton);
+        final Button viewInNewWindowButton = (Button) findViewById(R.id.viewRestaurantInSeparateWindowButton);
         generateButton.setOnClickListener(onclick);
+        viewInNewWindowButton.setOnClickListener(onclick1);
+    }
+
+    public void viewInNewWindow(View view) {
+        String whereToEat = "";
+        String restaurant = "";
+
+        //spinner
+        Spinner exercise = (Spinner) findViewById(R.id.spinner);
+        String location = String.valueOf(exercise.getSelectedItem());
+
+        // Get location
+        switch (location) {
+            case "The Hill":
+                whereToEat = "The Hill";
+                restaurant = "Illegal Pete's";
+            case "29th Street":
+                whereToEat = "29th Street";
+                restaurant = "Chipotle";
+            case "Pearl Street":
+                whereToEat = "Pearl Street";
+                restaurant = "Bartaco";
+        }
+
+        Intent intent = new Intent(this, ResultPageActivity.class);
+        intent.putExtra("result", restaurant);
+
+        startActivity(intent);
     }
 
     public void generateBurrito(View view) {
