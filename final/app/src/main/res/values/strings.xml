@@ -1,3 +1,17 @@
 <resources>
+
     <string name="app_name">BurritoBuilder</string>
+    <string name="toggle_on">Meat</string>
+    <string name="toggle_off">Veggie</string>
+    <string name="radioTaco">Taco</string>
+    <string name="radioBurrito">Burrito</string>
+    <string name="generateButton">Generate Burrito!</string>
+    <string name="burritoBuilder">Burrito Builder</string>
+    <string-array name="locations">
+        <item>The Hill</item>
+        <item>29th Street</item>
+        <item>Pearl Street</item>
+    </string-array>
+
 </resources>
+
