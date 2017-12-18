@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String guacText = "";
         String sourCreamText = "";
         String cheeseText = "";
+        String isGlutenFree = "";
 
         TextView burritoDetailTextView = (TextView) findViewById(R.id.burritoDetailTextView);
 
@@ -97,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
         //radio buttons
         RadioGroup cost = (RadioGroup) findViewById(R.id.radioGroup);
         int cost_id = cost.getCheckedRadioButtonId();
+
+        // switch
+        Switch gluten = (Switch) findViewById(R.id.switch1);
+        boolean glutenFree = gluten.isChecked();
 
         // Check taco vs. burrito
         //Veggie
@@ -146,9 +152,14 @@ public class MainActivity extends AppCompatActivity {
             cheeseText = " cheese ";
         }
 
+        // gluten free
+        if (glutenFree) {
+            isGlutenFree = "Since you're gluten free, you should use a corn tortilla.";
+        }
+
         burritoDetailTextView.setText("You've chosen a " + meatOrVeggie + " " + tacoOrBurrito +
                 " with the following toppings: " + salsaText + sourCreamText + guacText +
-                cheeseText + "." + "\nSince you want to eat it near " + whereToEat +
-                ", you should go to " + restaurant + ".");
+                cheeseText + "." + "\n" + isGlutenFree + "\nSince you want to eat it near "
+                + whereToEat + ", you should go to " + restaurant + ".");
     }
 }

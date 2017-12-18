@@ -8,6 +8,7 @@
     <string name="cheese">Cheese</string>
     <string name="sourCream">Sour Cream</string>
     <string name="guac">Guac</string>
+    <string name="gluten">Gluten Free?</string>
     <string name="radioBurrito">Burrito</string>
     <string name="generateButton">Generate Burrito!</string>
     <string name="burritoBuilder">Burrito Builder</string>

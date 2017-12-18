@@ -90,12 +90,10 @@
         android:id="@+id/meatVeggieToggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:textOff="@string/toggle_off"
         android:textOn="@string/toggle_on"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -150,6 +148,20 @@
         android:text="@string/guac"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cheeseCheckBox" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/gluten"
+        app:layout_constraintBottom_toTopOf="@+id/cheeseCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/meatVeggieToggle"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
 
 </android.support.constraint.ConstraintLayout>
