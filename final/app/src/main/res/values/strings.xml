@@ -8,6 +8,7 @@
     <string name="generateButton">Generate Burrito!</string>
     <string name="burritoBuilder">Burrito Builder</string>
     <string name="viewInWindowButton">View Restaurant in Separate Window!</string>
+    <string name="burritoDetailFiller">Burrito details will be shown here.</string>
     <string-array name="locations">
         <item>The Hill</item>
         <item>29th Street</item>
