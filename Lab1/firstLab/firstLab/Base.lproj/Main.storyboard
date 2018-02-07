@@ -31,12 +31,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mood Picker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXa-LF-vED">
+                                <rect key="frame" x="108" y="20" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="RXa-LF-vED" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="9xe-cS-ms8"/>
                             <constraint firstItem="P5d-l4-rVi" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="YEA-FA-F6P"/>
                             <constraint firstItem="HCd-0B-EA9" firstAttribute="top" secondItem="P5d-l4-rVi" secondAttribute="bottom" constant="8" id="dS2-Ee-7Og"/>
                             <constraint firstItem="HCd-0B-EA9" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="lLh-J3-RWp"/>
+                            <constraint firstItem="RXa-LF-vED" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="qUF-nh-laY"/>
                             <constraint firstItem="P5d-l4-rVi" firstAttribute="centerY" secondItem="PQr-Ze-W5v" secondAttribute="centerY" id="vEb-9S-zCX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -59,26 +67,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="87" y="312" width="201.5" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Safari" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMK-nU-zAw">
+                                <rect key="frame" x="119.5" y="20" width="136.5" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="363" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmg-wA-M3u">
+                                <rect key="frame" x="163" y="301.5" width="49" height="35"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Open"/>
+                                <connections>
+                                    <action selector="openSafariButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="fDS-7e-JKb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="Xmg-wA-M3u" firstAttribute="centerY" secondItem="O1u-W8-tvY" secondAttribute="centerY" id="c3Z-8z-jSO"/>
+                            <constraint firstItem="Xmg-wA-M3u" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="k0f-QA-j8F"/>
+                            <constraint firstItem="tMK-nU-zAw" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="p9a-8P-YiT"/>
+                            <constraint firstItem="tMK-nU-zAw" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="piN-7Z-GqM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -86,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596" y="421"/>
+            <point key="canvasLocation" x="596" y="420.53973013493254"/>
         </scene>
         <!--Third-->
         <scene sceneID="TYt-Gc-CTN">
