@@ -106,34 +106,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Third View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sXL-3p-wkF">
-                                <rect key="frame" x="106" y="297.5" width="163" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by ThirdViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkh-aR-Bul">
-                                <rect key="frame" x="87.5" y="348.5" width="200" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="YeE-p6-997">
+                                <rect key="frame" x="163" y="224" width="49" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqv-5j-pGr">
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
+                                        <state key="normal" title="Record"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90x-0W-cdf">
+                                        <rect key="frame" x="0.0" y="80" width="49" height="30"/>
+                                        <state key="normal" title="Stop"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-hh-aMh">
+                                        <rect key="frame" x="0.0" y="160" width="49" height="30"/>
+                                        <state key="normal" title="Play"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sXL-3p-wkF" firstAttribute="centerY" secondItem="VYM-bY-yMa" secondAttribute="centerY" id="P7Z-SR-oDL"/>
-                            <constraint firstItem="pkh-aR-Bul" firstAttribute="top" secondItem="sXL-3p-wkF" secondAttribute="bottom" constant="8" symbolic="YES" id="Rok-8O-u31"/>
-                            <constraint firstItem="sXL-3p-wkF" firstAttribute="centerX" secondItem="VYM-bY-yMa" secondAttribute="centerX" id="iRE-Nh-r8s"/>
-                            <constraint firstItem="pkh-aR-Bul" firstAttribute="centerX" secondItem="sXL-3p-wkF" secondAttribute="centerX" id="nZA-4A-FV1"/>
+                            <constraint firstItem="YeE-p6-997" firstAttribute="centerX" secondItem="VYM-bY-yMa" secondAttribute="centerX" id="9cK-tk-9Rk"/>
+                            <constraint firstItem="90x-0W-cdf" firstAttribute="centerX" secondItem="VYM-bY-yMa" secondAttribute="centerX" id="H5C-es-VUl"/>
+                            <constraint firstItem="90x-0W-cdf" firstAttribute="centerY" secondItem="VYM-bY-yMa" secondAttribute="centerY" id="d0V-Sd-uU1"/>
+                            <constraint firstItem="YeE-p6-997" firstAttribute="centerY" secondItem="VYM-bY-yMa" secondAttribute="centerY" id="dXe-9T-ikH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VYM-bY-yMa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Third" image="first" id="hha-I9-8nj"/>
+                    <connections>
+                        <outlet property="playButton" destination="HZd-hh-aMh" id="dEE-D4-pdg"/>
+                        <outlet property="recordButton" destination="iqv-5j-pGr" id="xhU-uz-Zdy"/>
+                        <outlet property="stopButton" destination="90x-0W-cdf" id="aGi-se-8im"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t12-zD-dpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1337" y="0.0"/>
+            <point key="canvasLocation" x="1336.8" y="-0.44977511244377816"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
