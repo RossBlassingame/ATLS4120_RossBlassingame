@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Okay</key>
+	<array>
+		<string>Meh.</string>
+		<string>So-so.</string>
+		<string>Decent.</string>
+	</array>
+	<key>Bad</key>
+	<array>
+		<string>Not too bad. Just bad.</string>
+		<string>Awful!</string>
+		<string>Terrible!</string>
+	</array>
+	<key>Good</key>
+	<array>
+		<string>Pretty good!</string>
+		<string>Just good!</string>
+		<string>Amazing!</string>
+	</array>
+</dict>
+</plist>
