@@ -106,8 +106,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="YeE-p6-997">
-                                <rect key="frame" x="163" y="224" width="49" height="190"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="YeE-p6-997">
+                                <rect key="frame" x="163" y="184" width="49" height="270"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqv-5j-pGr">
                                         <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
@@ -121,6 +121,10 @@
                                         <rect key="frame" x="0.0" y="160" width="49" height="30"/>
                                         <state key="normal" title="Play"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="265-My-BVN">
+                                        <rect key="frame" x="0.0" y="240" width="49" height="30"/>
+                                        <state key="normal" title="Pause"/>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -128,13 +132,14 @@
                         <constraints>
                             <constraint firstItem="YeE-p6-997" firstAttribute="centerX" secondItem="VYM-bY-yMa" secondAttribute="centerX" id="9cK-tk-9Rk"/>
                             <constraint firstItem="90x-0W-cdf" firstAttribute="centerX" secondItem="VYM-bY-yMa" secondAttribute="centerX" id="H5C-es-VUl"/>
-                            <constraint firstItem="90x-0W-cdf" firstAttribute="centerY" secondItem="VYM-bY-yMa" secondAttribute="centerY" id="d0V-Sd-uU1"/>
-                            <constraint firstItem="YeE-p6-997" firstAttribute="centerY" secondItem="VYM-bY-yMa" secondAttribute="centerY" id="dXe-9T-ikH"/>
+                            <constraint firstItem="YeE-p6-997" firstAttribute="centerX" secondItem="VYM-bY-yMa" secondAttribute="centerX" id="ffl-7u-G3q"/>
+                            <constraint firstItem="YeE-p6-997" firstAttribute="centerY" secondItem="VYM-bY-yMa" secondAttribute="centerY" id="rd7-fH-D45"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VYM-bY-yMa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Third" image="first" id="hha-I9-8nj"/>
                     <connections>
+                        <outlet property="pauseButton" destination="265-My-BVN" id="zmB-oP-WTe"/>
                         <outlet property="playButton" destination="HZd-hh-aMh" id="dEE-D4-pdg"/>
                         <outlet property="recordButton" destination="iqv-5j-pGr" id="xhU-uz-Zdy"/>
                         <outlet property="stopButton" destination="90x-0W-cdf" id="aGi-se-8im"/>

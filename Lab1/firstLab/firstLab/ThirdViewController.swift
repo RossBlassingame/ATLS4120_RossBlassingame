@@ -14,6 +14,8 @@ class ThirdViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
 	@IBOutlet weak var recordButton: UIButton!
 	@IBOutlet weak var stopButton: UIButton!
 	@IBOutlet weak var playButton: UIButton!
+	@IBOutlet weak var pauseButton: UIButton!
+	
 	var audioPlayer: AVAudioPlayer?
 	var audioRecorder: AVAudioRecorder?
 	let fileName = "audio.m4a"
@@ -23,6 +25,7 @@ class ThirdViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
 		if audioRecorder?.isRecording == false{
 			playButton.isEnabled = false
 			stopButton.isEnabled = true
+			pauseButton.isEnabled = true
 			audioRecorder?.delegate = self
 			print("start recording")
 			audioRecorder?.record()
@@ -33,6 +36,7 @@ class ThirdViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
 		stopButton.isEnabled = false
 		playButton.isEnabled = true
 		recordButton.isEnabled = true
+		pauseButton.isEnabled = false
 		//stop recording or playing
 		if audioRecorder?.isRecording == true {
 			print("stop recording")
@@ -40,6 +44,22 @@ class ThirdViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
 		} else {
 			print("stop playing")
 			audioPlayer?.stop()
+		}
+	}
+	
+	@IBAction func pauseAudio(_ sender: UIButton) {
+		stopButton.isEnabled = true
+		playButton.isEnabled = true
+		recordButton.isEnabled = true
+		pauseButton.isEnabled = false
+		
+		if audioRecorder?.isRecording == true {
+			print("Pause recording.")
+			audioRecorder?.pause()
+		}
+		else if audioPlayer?.isPlaying == true {
+			print("pause playing.")
+			audioPlayer?.pause()
 		}
 	}
 	
@@ -69,6 +89,7 @@ class ThirdViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
 		//disable buttons since no audio has been recorded
 		playButton.isEnabled = false;
 		stopButton.isEnabled = false;
+		pauseButton.isEnabled = false;
 		
 		//get path for the audio file
 		let dirPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
