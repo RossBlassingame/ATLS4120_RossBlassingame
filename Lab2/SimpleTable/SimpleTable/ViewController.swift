@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		navigationItem.leftBarButtonItem = editButtonItem
 		
+		/*
 		let resultsController = SearchResultsTableViewController()
 		resultsController.words = words
 		searchController = UISearchController(searchResultsController: resultsController)
@@ -41,7 +42,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		searchBar.sizeToFit()
 		tableview?.tableHeaderView = searchBar
 		searchController.searchResultsUpdater = resultsController
+		*/
+		
+		searchHelper()
 		// Do any additional setup after loading the view, typically from a nib.
+	}
+	
+	func searchHelper() {
+		let resultsController = SearchResultsTableViewController()
+		resultsController.words = words
+		searchController = UISearchController(searchResultsController: resultsController)
+		
+		let searchBar = searchController.searchBar
+		searchBar.placeholder = "Enter a search term"
+		searchBar.sizeToFit()
+		tableview?.tableHeaderView = searchBar
+		searchController.searchResultsUpdater = resultsController
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -106,6 +122,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		if let sourceViewController = sender.source as? NewWordViewController, let word = sourceViewController.word {
 			let newIndexPath = IndexPath(row: words.count, section: 0)
 			words.append(word)
+			searchHelper()
 			UserDefaults.standard.set(words, forKey: "words")
 			tableview?.insertRows(at: [newIndexPath], with: .automatic)
 		}
