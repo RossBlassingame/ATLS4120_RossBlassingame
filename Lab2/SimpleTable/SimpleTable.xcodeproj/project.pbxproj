@@ -15,6 +15,7 @@
 		311AAC5B2036012F005D4365 /* SimpleTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311AAC5A2036012F005D4365 /* SimpleTableTests.swift */; };
 		311AAC662036012F005D4365 /* SimpleTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311AAC652036012F005D4365 /* SimpleTableUITests.swift */; };
 		311AAD3A203BB1FF005D4365 /* NewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311AAD39203BB1FF005D4365 /* NewWordViewController.swift */; };
+		311AAD3C203BBD97005D4365 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311AAD3B203BBD97005D4365 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		311AAC652036012F005D4365 /* SimpleTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableUITests.swift; sourceTree = "<group>"; };
 		311AAC672036012F005D4365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		311AAD39203BB1FF005D4365 /* NewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordViewController.swift; sourceTree = "<group>"; };
+		311AAD3B203BBD97005D4365 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				311AAC452036012F005D4365 /* AppDelegate.swift */,
 				311AAC472036012F005D4365 /* ViewController.swift */,
+				311AAD3B203BBD97005D4365 /* SearchResultsTableViewController.swift */,
 				311AAC492036012F005D4365 /* Main.storyboard */,
 				311AAD39203BB1FF005D4365 /* NewWordViewController.swift */,
 				311AAC4C2036012F005D4365 /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				311AAD3C203BBD97005D4365 /* SearchResultsTableViewController.swift in Sources */,
 				311AAC482036012F005D4365 /* ViewController.swift in Sources */,
 				311AAC462036012F005D4365 /* AppDelegate.swift in Sources */,
 				311AAD3A203BB1FF005D4365 /* NewWordViewController.swift in Sources */,

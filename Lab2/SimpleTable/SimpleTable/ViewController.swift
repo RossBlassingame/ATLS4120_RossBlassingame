@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
-	@IBOutlet weak var tableview: UITableView!
+	@IBOutlet weak var tableview: UITableView? = UITableView()
 	
 	private var words: [String] = ["a", "b", "c", "d"]
 	
 	let simpleTableIdentifier = "SimpleTableIdentifier"
+	
+	var searchController: UISearchController!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -29,6 +31,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		}
 		
 		navigationItem.leftBarButtonItem = editButtonItem
+		
+		let resultsController = SearchResultsTableViewController()
+		resultsController.words = words
+		searchController = UISearchController(searchResultsController: resultsController)
+		
+		let searchBar = searchController.searchBar
+		searchBar.placeholder = "Enter a search term"
+		searchBar.sizeToFit()
+		tableview?.tableHeaderView = searchBar
+		searchController.searchResultsUpdater = resultsController
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 
@@ -95,7 +107,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			let newIndexPath = IndexPath(row: words.count, section: 0)
 			words.append(word)
 			UserDefaults.standard.set(words, forKey: "words")
-			tableview.insertRows(at: [newIndexPath], with: .automatic)
+			tableview?.insertRows(at: [newIndexPath], with: .automatic)
 		}
 	}
 	
