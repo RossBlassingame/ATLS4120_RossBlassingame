@@ -12,12 +12,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	
 	@IBOutlet weak var tableview: UITableView!
 	
-	private var words = ["a", "b", "c", "d"]
+	private var words: [String] = ["a", "b", "c", "d"]
 	
 	let simpleTableIdentifier = "SimpleTableIdentifier"
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		if let tmp: [String] = UserDefaults.standard.object(forKey: "words") as? [String] {
+			// Successfully loaded
+			print("good")
+			words = tmp
+		} else {
+			// Didn't load
+			print("error")
+		}
 		
 		navigationItem.leftBarButtonItem = editButtonItem
 		// Do any additional setup after loading the view, typically from a nib.
@@ -85,6 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		if let sourceViewController = sender.source as? NewWordViewController, let word = sourceViewController.word {
 			let newIndexPath = IndexPath(row: words.count, section: 0)
 			words.append(word)
+			UserDefaults.standard.set(words, forKey: "words")
 			tableview.insertRows(at: [newIndexPath], with: .automatic)
 		}
 	}
