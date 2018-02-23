@@ -1,15 +1,15 @@
 //
-//  lab3Tests.swift
-//  lab3Tests
+//  lab3DogsTests.swift
+//  lab3DogsTests
 //
 //  Created by Ross Blassingame on 2/23/18.
 //  Copyright © 2018 Ross Blassingame. All rights reserved.
 //
 
 import XCTest
-@testable import lab3
+@testable import lab3Dogs
 
-class lab3Tests: XCTestCase {
+class lab3DogsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

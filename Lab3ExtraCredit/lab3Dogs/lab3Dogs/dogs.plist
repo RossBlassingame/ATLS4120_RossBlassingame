@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>breed</key>
+		<string>Golden Retriever</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Golden_Retriever</string>
+	</dict>
+	<dict>
+		<key>breed</key>
+		<string>Labrador Retriever</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Labrador_Retriever</string>
+	</dict>
+	<dict>
+		<key>breed</key>
+		<string>German Shepherd</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/German_Shepherd</string>
+	</dict>
+	<dict>
+		<key>breed</key>
+		<string>Rottweiler</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Rottweiler</string>
+	</dict>
+	<dict>
+		<key>breed</key>
+		<string>Australian Shepherd</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Australian_Shepherd</string>
+	</dict>
+	<dict>
+		<key>breed</key>
+		<string>English Pointer</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Pointer_(dog_breed)</string>
+	</dict>
+	<dict>
+		<key>breed</key>
+		<string>Basenji</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Basenji</string>
+	</dict>
+</array>
+</plist>
