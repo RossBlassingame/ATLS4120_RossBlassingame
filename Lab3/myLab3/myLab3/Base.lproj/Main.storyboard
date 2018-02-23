@@ -120,7 +120,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OIe-H3-W9z"/>
                     </view>
-                    <navigationItem key="navigationItem" id="svZ-oX-857"/>
+                    <navigationItem key="navigationItem" id="svZ-oX-857">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="x3D-Wx-wTi">
+                            <connections>
+                                <action selector="share:" destination="iJV-mS-YFb" id="1rn-xg-Hsi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="0ah-wA-f6v" id="bqw-ds-EBl"/>
                     </connections>

@@ -11,6 +11,15 @@ import UIKit
 class DetailViewController: UIViewController {
 	
 	@IBOutlet weak var imageView: UIImageView!
+	@IBAction func share(_ sender: UIBarButtonItem) {
+		var imageArray = [UIImage]()
+		imageArray.append(imageView.image!)
+		let shareScreen = UIActivityViewController(activityItems: imageArray, applicationActivities: nil)
+		shareScreen.modalPresentationStyle = .popover
+		//shareScreen.popoverPresentationController?.barButtonItem
+		present(shareScreen, animated: true, completion: nil)
+	}
+	
 	
 	var imageName: String?
 
