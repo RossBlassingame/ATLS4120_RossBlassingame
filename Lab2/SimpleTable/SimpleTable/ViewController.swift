@@ -105,6 +105,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		if editingStyle == .delete {
 			// Delete the row from the data source
 			words.remove(at: indexPath.row)
+			UserDefaults.standard.set(words, forKey: "words")
 			tableView.deleteRows(at: [indexPath], with: .fade)
 		} else if editingStyle == .insert {
 			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
