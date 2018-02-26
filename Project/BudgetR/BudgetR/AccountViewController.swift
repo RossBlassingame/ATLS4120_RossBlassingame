@@ -11,8 +11,8 @@ import UIKit
 class AccountViewController: UIViewController {
 	
 	//MARK: Properties
-	@IBOutlet weak var accountNameLabel: UILabel!
-	@IBOutlet weak var accountBalanceLabel: UILabel!
+	@IBOutlet weak var accountNameTextField: UITextField!
+	@IBOutlet weak var accountBalanceTextField: UITextField!
 	
 	
 	override func viewDidLoad() {

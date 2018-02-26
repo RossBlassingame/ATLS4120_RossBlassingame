@@ -102,6 +102,16 @@ class AccountTableViewController: UITableViewController {
     }
     */
 	
+	@IBAction func unwindFromNewAccount(sender: UIStoryboardSegue) {
+		let accountVC = sender.source as? AccountViewController
+		
+		guard let account = Account(name: (accountVC?.accountNameTextField.text!)!, balance: Double(accountVC!.accountBalanceTextField.text!)!) else { fatalError("Unable to instantiate account.") }
+			
+		accounts += [account]
+		
+		tableView.reloadData()
+	}
+	
 	//MARK: Private Methods
 	
 	private func loadSampleAccounts() {
