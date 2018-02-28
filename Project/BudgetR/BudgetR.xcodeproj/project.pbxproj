@@ -22,6 +22,7 @@
 		31DBF9272035077A00A43C6A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DBF9262035077A00A43C6A /* AccountViewController.swift */; };
 		31F9A008204742C500817C00 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A007204742C500817C00 /* BudgetTableViewCell.swift */; };
 		31F9A00A2047451200817C00 /* NewBudgetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A0092047451200817C00 /* NewBudgetCategoryViewController.swift */; };
+		31F9A00C2047512B00817C00 /* BudgetCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A00B2047512B00817C00 /* BudgetCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		31DBF9262035077A00A43C6A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		31F9A007204742C500817C00 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
 		31F9A0092047451200817C00 /* NewBudgetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBudgetCategoryViewController.swift; sourceTree = "<group>"; };
+		31F9A00B2047512B00817C00 /* BudgetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,14 +116,15 @@
 			isa = PBXGroup;
 			children = (
 				31DBF8F42034CAB400A43C6A /* Main.storyboard */,
+				31DBF8F02034CAB400A43C6A /* BudgetViewController.swift */,
 				31F9A0092047451200817C00 /* NewBudgetCategoryViewController.swift */,
 				31DBF9262035077A00A43C6A /* AccountViewController.swift */,
 				31DBF8EE2034CAB400A43C6A /* AppDelegate.swift */,
-				31DBF8F02034CAB400A43C6A /* BudgetViewController.swift */,
 				31DBF8F22034CAB400A43C6A /* AddTransactionViewController.swift */,
 				31DBF91E2034CBEC00A43C6A /* AccountsViewController.swift */,
 				31DBF9222034EE7A00A43C6A /* AccountTableViewController.swift */,
 				31DBF9242034EEEC00A43C6A /* Account.swift */,
+				31F9A00B2047512B00817C00 /* BudgetCategory.swift */,
 				31DBF9202034EB6B00A43C6A /* AccountTableViewCell.swift */,
 				31F9A007204742C500817C00 /* BudgetTableViewCell.swift */,
 				31DBF8F72034CAB400A43C6A /* Assets.xcassets */,
@@ -290,6 +293,7 @@
 				31DBF9232034EE7A00A43C6A /* AccountTableViewController.swift in Sources */,
 				31DBF91F2034CBEC00A43C6A /* AccountsViewController.swift in Sources */,
 				31DBF9212034EB6B00A43C6A /* AccountTableViewCell.swift in Sources */,
+				31F9A00C2047512B00817C00 /* BudgetCategory.swift in Sources */,
 				31DBF8F12034CAB400A43C6A /* BudgetViewController.swift in Sources */,
 				31DBF9252034EEEC00A43C6A /* Account.swift in Sources */,
 				31F9A008204742C500817C00 /* BudgetTableViewCell.swift in Sources */,

@@ -9,6 +9,10 @@
 import UIKit
 
 class NewBudgetCategoryViewController: UIViewController {
+	
+	@IBOutlet weak var categoryNameTextField: UITextField!
+	@IBOutlet weak var categoryAmountTextField: UITextField!
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
