@@ -11,13 +11,9 @@ import UIKit
 class AccountTableViewController: UITableViewController {
 	
 	//MARK: Properties
-	
-	var accounts = [Account]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		loadSampleAccounts()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,7 +34,7 @@ class AccountTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accounts.count
+        return sharedData.sharedInstance.accounts.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,7 +45,7 @@ class AccountTableViewController: UITableViewController {
 			fatalError("The dequeued cell is not an instance of AccountTableViewCell.")
 		}
 		
-		let account = accounts[indexPath.row]
+		let account = sharedData.sharedInstance.accounts[indexPath.row]
 
         cell.accountNameLabel.text = account.name
 		cell.accountBalanceLabel.text = String(account.balance)
@@ -107,19 +103,9 @@ class AccountTableViewController: UITableViewController {
 		
 		guard let account = Account(name: (accountVC?.accountNameTextField.text!)!, balance: Double(accountVC!.accountBalanceTextField.text!)!) else { fatalError("Unable to instantiate account.") }
 			
-		accounts += [account]
+		sharedData.sharedInstance.accounts += [account]
 		
 		tableView.reloadData()
-	}
-	
-	//MARK: Private Methods
-	
-	private func loadSampleAccounts() {
-		guard let account1 = Account(name: "Checking", balance: 500) else { fatalError("Unable to instantiate account1.") }
-		guard let account2 = Account(name: "Savings", balance: 1500) else { fatalError("Unable to instantiate account2.") }
-		guard let account3 = Account(name: "Credit Card", balance: -100) else { fatalError("Unable to instantiate account3.") }
-		
-		accounts += [account1, account2, account3]
 	}
 
 }

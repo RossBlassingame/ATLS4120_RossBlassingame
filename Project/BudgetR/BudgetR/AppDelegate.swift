@@ -10,6 +10,9 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+	
+	var accounts = [Account]()
+	
 
 	var window: UIWindow?
 
