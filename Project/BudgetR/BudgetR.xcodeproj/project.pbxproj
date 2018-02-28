@@ -20,6 +20,8 @@
 		31DBF9232034EE7A00A43C6A /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DBF9222034EE7A00A43C6A /* AccountTableViewController.swift */; };
 		31DBF9252034EEEC00A43C6A /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DBF9242034EEEC00A43C6A /* Account.swift */; };
 		31DBF9272035077A00A43C6A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DBF9262035077A00A43C6A /* AccountViewController.swift */; };
+		31F9A008204742C500817C00 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A007204742C500817C00 /* BudgetTableViewCell.swift */; };
+		31F9A00A2047451200817C00 /* NewBudgetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A0092047451200817C00 /* NewBudgetCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		31DBF9222034EE7A00A43C6A /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		31DBF9242034EEEC00A43C6A /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		31DBF9262035077A00A43C6A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		31F9A007204742C500817C00 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
+		31F9A0092047451200817C00 /* NewBudgetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBudgetCategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				31DBF8F42034CAB400A43C6A /* Main.storyboard */,
+				31F9A0092047451200817C00 /* NewBudgetCategoryViewController.swift */,
 				31DBF9262035077A00A43C6A /* AccountViewController.swift */,
 				31DBF8EE2034CAB400A43C6A /* AppDelegate.swift */,
 				31DBF8F02034CAB400A43C6A /* BudgetViewController.swift */,
@@ -118,6 +123,7 @@
 				31DBF9222034EE7A00A43C6A /* AccountTableViewController.swift */,
 				31DBF9242034EEEC00A43C6A /* Account.swift */,
 				31DBF9202034EB6B00A43C6A /* AccountTableViewCell.swift */,
+				31F9A007204742C500817C00 /* BudgetTableViewCell.swift */,
 				31DBF8F72034CAB400A43C6A /* Assets.xcassets */,
 				31DBF8F92034CAB400A43C6A /* LaunchScreen.storyboard */,
 				31DBF8FC2034CAB400A43C6A /* Info.plist */,
@@ -277,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31F9A00A2047451200817C00 /* NewBudgetCategoryViewController.swift in Sources */,
 				31DBF8F32034CAB400A43C6A /* AddTransactionViewController.swift in Sources */,
 				31DBF8EF2034CAB400A43C6A /* AppDelegate.swift in Sources */,
 				31DBF9272035077A00A43C6A /* AccountViewController.swift in Sources */,
@@ -285,6 +292,7 @@
 				31DBF9212034EB6B00A43C6A /* AccountTableViewCell.swift in Sources */,
 				31DBF8F12034CAB400A43C6A /* BudgetViewController.swift in Sources */,
 				31DBF9252034EEEC00A43C6A /* Account.swift in Sources */,
+				31F9A008204742C500817C00 /* BudgetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
