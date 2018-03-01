@@ -23,7 +23,6 @@ class AccountTransactionsTableViewController: UITableViewController {
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
-		print(transactions)
 		tableView.reloadData()
 	}
 
@@ -54,11 +53,12 @@ class AccountTransactionsTableViewController: UITableViewController {
 		cell.amountLabel.text = String(transaction.amount)
 		cell.categoryLabel.text = transaction.category.name
 		cell.dateLabel.text = String(describing: transaction.date)
-		cell.payeeLabel.text = transaction.payee
 		if transaction.isExpense == true {
 			cell.backgroundColor = UIColor.red
+			cell.payeeLabel.text = transaction.payee
 		} else {
 			cell.backgroundColor = UIColor.green
+			cell.payeeLabel.text = "To Be Budgeted"
 		}
 
         return cell
@@ -104,16 +104,8 @@ class AccountTransactionsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		print("HELLO")
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-		let account = segue.source as? AccountViewController
-		let accountName = account?.accountNameTextField.text
-		for i in 0...(sharedData.sharedInstance.accounts.count - 1) {
-			if sharedData.sharedInstance.accounts[i].name == accountName {
-				transactions = sharedData.sharedInstance.accounts[i].transactions
-			}
-		}
     }
 	*/
 

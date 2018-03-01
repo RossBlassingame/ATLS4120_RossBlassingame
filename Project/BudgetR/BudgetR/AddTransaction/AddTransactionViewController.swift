@@ -31,16 +31,27 @@ class AddTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
 		for i in 0...(sharedData.sharedInstance.accounts.count - 1) {
 			if sharedData.sharedInstance.accounts[i].name == account.name {
 				sharedData.sharedInstance.accounts[i].transactions += [newTransaction!]
-				sharedData.sharedInstance.accounts[i].balance -= amount!
+				if isExpense {
+					sharedData.sharedInstance.accounts[i].balance -= amount!
+				} else {
+					sharedData.sharedInstance.accounts[i].balance += amount!
+				}
 			}
 		}
 		
 		// Finds selected budget category and subtracts amount from that category.
 		for i in 0...(sharedData.sharedInstance.budgetCategories.count - 1) {
 			if sharedData.sharedInstance.budgetCategories[i].name == category.name {
-				sharedData.sharedInstance.budgetCategories[i].amount -= amount!
+				if isExpense {
+					sharedData.sharedInstance.budgetCategories[i].amount -= amount!
+				}
 			}
 		}
+		
+		// Clears all fields.
+		amountTextField.text = ""
+		payeeTextField.text = ""
+		expenseIncomeSegmentControl.selectedSegmentIndex = 0
 		
 	}
 	
