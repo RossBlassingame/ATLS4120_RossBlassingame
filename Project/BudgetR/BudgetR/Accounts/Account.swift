@@ -14,6 +14,7 @@ class Account {
 	
 	var name: String
 	var balance: Double
+	var transactions: [Transaction]
 	
 	//MARK: Initialization
 	
@@ -24,6 +25,7 @@ class Account {
 		
 		self.name = name
 		self.balance = balance
+		self.transactions = [Transaction]() // At initialization, transaction list is empty.
 	}
 	
 }

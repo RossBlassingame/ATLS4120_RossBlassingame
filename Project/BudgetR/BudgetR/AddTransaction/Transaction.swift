@@ -12,18 +12,24 @@ class Transaction {
 	
 	//MARK: Properties
 	
-	var name: String
-	var balance: Double
+	var isExpense: Bool // if true, this transaction is an expense. If false, it's income.
+	var payee: String
+	var category: BudgetCategory
+	var account: Account
+	var date: Date
 	
 	//MARK: Initialization
 	
-	init?(name: String, balance: Double) {
-		if name.isEmpty || balance.isNaN {
+	init?(isExpense: Bool, payee: String, category: BudgetCategory, account: Account, date: Date) {
+		if payee.isEmpty {
 			return nil
 		}
 		
-		self.name = name
-		self.balance = balance
+		self.isExpense = isExpense
+		self.payee = payee
+		self.category = category
+		self.account = account
+		self.date = date
 	}
 	
 }
