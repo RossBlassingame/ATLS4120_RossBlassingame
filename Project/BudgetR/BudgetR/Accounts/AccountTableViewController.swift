@@ -122,5 +122,8 @@ class AccountTableViewController: UITableViewController {
 		
 		tableView.reloadData()
 	}
+	@IBAction func unwindFromNewAccountCancel(sender: UIStoryboardSegue) {
+		dismiss(animated: true, completion: nil)
+	}
 
 }

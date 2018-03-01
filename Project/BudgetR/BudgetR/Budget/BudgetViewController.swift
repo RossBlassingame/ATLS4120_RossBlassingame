@@ -67,6 +67,9 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 		budgetCategoriesTableView.reloadData()
 	}
+	@IBAction func unwindFromNewBudgetCategoryCancel(sender: UIStoryboardSegue) {
+		dismiss(animated: true, completion: nil)
+	}
 	
 	//MARK: Private Methods
 	

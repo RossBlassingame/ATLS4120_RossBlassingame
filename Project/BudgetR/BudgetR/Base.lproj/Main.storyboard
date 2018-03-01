@@ -173,6 +173,11 @@
                         <viewLayoutGuide key="safeArea" id="f58-jC-rY9"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Budget Category" id="kdh-im-MlP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="S6x-Dn-ri7">
+                            <connections>
+                                <segue destination="lX5-cW-7ZT" kind="unwind" unwindAction="unwindFromNewBudgetCategoryCancelWithSender:" id="RAw-oQ-An6"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="bSQ-lM-GhV">
                             <connections>
                                 <segue destination="lX5-cW-7ZT" kind="unwind" unwindAction="unwindFromNewBudgetCategoryWithSender:" id="0zS-JB-YgV"/>
@@ -586,6 +591,11 @@
                         <viewLayoutGuide key="safeArea" id="9bM-SY-vux"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Account" id="Qfc-cH-fty">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cML-pr-ky0">
+                            <connections>
+                                <segue destination="Fh1-S1-v1Q" kind="unwind" unwindAction="unwindFromNewAccountCancelWithSender:" id="bb8-mF-UIv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="xLS-i9-19N">
                             <connections>
                                 <segue destination="Fh1-S1-v1Q" kind="unwind" unwindAction="unwindFromNewAccountWithSender:" id="zuv-L4-FQO"/>
