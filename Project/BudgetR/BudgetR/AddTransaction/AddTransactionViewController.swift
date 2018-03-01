@@ -9,8 +9,9 @@
 import UIKit
 
 class AddTransactionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-	
+
 	@IBOutlet weak var expenseIncomeSegmentControl: UISegmentedControl!
+	@IBOutlet weak var amountTextField: UITextField!
 	@IBOutlet weak var payeeTextField: UITextField!
 	@IBOutlet weak var categoryPicker: UIPickerView!
 	@IBOutlet weak var accountPicker: UIPickerView!
@@ -18,17 +19,26 @@ class AddTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
 	
 	@IBAction func saveButtonPressed(_ sender: Any) {
 		let isExpense = expenseIncomeSegmentControl.selectedSegmentIndex == 0 ? true : false
+		let amount = Double(amountTextField.text!)
 		let payee = payeeTextField.text
 		let category: BudgetCategory = sharedData.sharedInstance.budgetCategories[Int(categoryPicker.selectedRow(inComponent: 0).description)!]
 		let account: Account = sharedData.sharedInstance.accounts[Int(accountPicker.selectedRow(inComponent: 0).description)!]
 		let date: Date = datePicker.date
 		
-		let newTransaction = Transaction(isExpense: isExpense, payee: payee!, category: category, account: account, date: date)
+		let newTransaction = Transaction(isExpense: isExpense, amount: amount!, payee: payee!, category: category, account: account, date: date)
 		
 		// Finds selected account in the account list, and append the new transaction to the list.
 		for i in 0...(sharedData.sharedInstance.accounts.count - 1) {
 			if sharedData.sharedInstance.accounts[i].name == account.name {
 				sharedData.sharedInstance.accounts[i].transactions += [newTransaction!]
+				sharedData.sharedInstance.accounts[i].balance -= amount!
+			}
+		}
+		
+		// Finds selected budget category and subtracts amount from that category.
+		for i in 0...(sharedData.sharedInstance.budgetCategories.count - 1) {
+			if sharedData.sharedInstance.budgetCategories[i].name == category.name {
+				sharedData.sharedInstance.budgetCategories[i].amount -= amount!
 			}
 		}
 		

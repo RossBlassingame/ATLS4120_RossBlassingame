@@ -30,6 +30,7 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	
 	override func viewWillAppear(_ animated: Bool) {
 		updateBudgetAmountLabel()
+		budgetCategoriesTableView.reloadData()
 	}
 
 	override func didReceiveMemoryWarning() {

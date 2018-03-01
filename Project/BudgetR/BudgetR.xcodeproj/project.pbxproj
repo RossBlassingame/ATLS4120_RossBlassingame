@@ -24,6 +24,8 @@
 		31F9A00C2047512B00817C00 /* BudgetCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A00B2047512B00817C00 /* BudgetCategory.swift */; };
 		31F9A0112047663200817C00 /* sharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A0102047663200817C00 /* sharedData.swift */; };
 		31F9A0132047795600817C00 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A0122047795600817C00 /* Transaction.swift */; };
+		31F9A01520487B4500817C00 /* AccountTransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A01420487B4500817C00 /* AccountTransactionsTableViewController.swift */; };
+		31F9A01720487D3300817C00 /* AccountTransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9A01620487D3300817C00 /* AccountTransactionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		31F9A00B2047512B00817C00 /* BudgetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategory.swift; sourceTree = "<group>"; };
 		31F9A0102047663200817C00 /* sharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sharedData.swift; sourceTree = "<group>"; };
 		31F9A0122047795600817C00 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		31F9A01420487B4500817C00 /* AccountTransactionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactionsTableViewController.swift; sourceTree = "<group>"; };
+		31F9A01620487D3300817C00 /* AccountTransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactionsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 			children = (
 				31DBF9242034EEEC00A43C6A /* Account.swift */,
 				31DBF9222034EE7A00A43C6A /* AccountTableViewController.swift */,
+				31F9A01420487B4500817C00 /* AccountTransactionsTableViewController.swift */,
+				31F9A01620487D3300817C00 /* AccountTransactionsTableViewCell.swift */,
 				31DBF9262035077A00A43C6A /* AccountViewController.swift */,
 				31DBF9202034EB6B00A43C6A /* AccountTableViewCell.swift */,
 			);
@@ -321,7 +327,9 @@
 				31DBF9272035077A00A43C6A /* AccountViewController.swift in Sources */,
 				31DBF9232034EE7A00A43C6A /* AccountTableViewController.swift in Sources */,
 				31DBF9212034EB6B00A43C6A /* AccountTableViewCell.swift in Sources */,
+				31F9A01520487B4500817C00 /* AccountTransactionsTableViewController.swift in Sources */,
 				31F9A00C2047512B00817C00 /* BudgetCategory.swift in Sources */,
+				31F9A01720487D3300817C00 /* AccountTransactionsTableViewCell.swift in Sources */,
 				31DBF8F12034CAB400A43C6A /* BudgetViewController.swift in Sources */,
 				31DBF9252034EEEC00A43C6A /* Account.swift in Sources */,
 				31F9A008204742C500817C00 /* BudgetTableViewCell.swift in Sources */,
