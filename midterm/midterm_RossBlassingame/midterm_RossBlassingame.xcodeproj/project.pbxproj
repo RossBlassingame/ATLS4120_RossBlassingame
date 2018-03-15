@@ -17,6 +17,7 @@
 		310AF208205ADF6000EAC34F /* midterm_RossBlassingameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AF207205ADF6000EAC34F /* midterm_RossBlassingameUITests.swift */; };
 		310AF216205ADFFB00EAC34F /* restaurants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 310AF215205ADFFB00EAC34F /* restaurants.plist */; };
 		310AF21A205AE68100EAC34F /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AF219205AE68100EAC34F /* Restaurant.swift */; };
+		310AF21C205AEADC00EAC34F /* NewRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AF21B205AEADC00EAC34F /* NewRestaurantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		310AF209205ADF6000EAC34F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		310AF215205ADFFB00EAC34F /* restaurants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = restaurants.plist; path = "../../../../../../../../../Downloads/midterm-2/restaurants.plist"; sourceTree = "<group>"; };
 		310AF219205AE68100EAC34F /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		310AF21B205AEADC00EAC34F /* NewRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				310AF1E5205ADF6000EAC34F /* AppDelegate.swift */,
 				310AF1E7205ADF6000EAC34F /* MasterViewController.swift */,
+				310AF21B205AEADC00EAC34F /* NewRestaurantViewController.swift */,
 				310AF1E9205ADF6000EAC34F /* DetailViewController.swift */,
 				310AF219205AE68100EAC34F /* Restaurant.swift */,
 				310AF1EB205ADF6000EAC34F /* Main.storyboard */,
@@ -271,6 +274,7 @@
 			files = (
 				310AF21A205AE68100EAC34F /* Restaurant.swift in Sources */,
 				310AF1EA205ADF6000EAC34F /* DetailViewController.swift in Sources */,
+				310AF21C205AEADC00EAC34F /* NewRestaurantViewController.swift in Sources */,
 				310AF1E8205ADF6000EAC34F /* MasterViewController.swift in Sources */,
 				310AF1E6205ADF6000EAC34F /* AppDelegate.swift in Sources */,
 			);

@@ -39,8 +39,9 @@ class MasterViewController: UITableViewController {
 		
 		/*
 		navigationItem.leftBarButtonItem = editButtonItem
-
+		*/
 		
+		/*
 		let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
 		navigationItem.rightBarButtonItem = addButton
 		*/
@@ -61,16 +62,14 @@ class MasterViewController: UITableViewController {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-	
-	/*
 
+	/*
 	@objc
 	func insertNewObject(_ sender: Any) {
 		restaurants.insert(NSDate(), at: 0)
 		let indexPath = IndexPath(row: 0, section: 0)
 		tableView.insertRows(at: [indexPath], with: .automatic)
 	}
-
 	*/
 
 	// MARK: - Segues
@@ -89,6 +88,7 @@ class MasterViewController: UITableViewController {
 		    }
 		}
 	}
+	
 
 	// MARK: - Table View
 
@@ -119,6 +119,21 @@ class MasterViewController: UITableViewController {
 		    tableView.deleteRows(at: [indexPath], with: .fade)
 		} else if editingStyle == .insert {
 		    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+		}
+	}
+	
+	
+	// MARK: Actions
+	
+	@IBAction func unwindToRestaurantList(sender: UIStoryboardSegue) {
+		if let sourceViewController = sender.source as? NewRestaurantViewController, let restaurant = sourceViewController.restaurant {
+			//let newIndexPath = IndexPath(row: restaurants.count, section: 0)
+			restaurants.append(restaurant)
+			//searchHelper()
+			//UserDefaults.standard.set(words, forKey: "words")
+			//tableview?.insertRows(at: [newIndexPath], with: .automatic)
+			
+			tableView.reloadData()
 		}
 	}
 
