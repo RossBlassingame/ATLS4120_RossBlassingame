@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
 	var detailViewController: DetailViewController? = nil
-	var restaurants = [[String : String]]()
+	var restaurants = [Restaurant]()
 
 
 	override func viewDidLoad() {
@@ -25,7 +25,12 @@ class MasterViewController: UITableViewController {
 			do {
 				let data = try Data(contentsOf: pathURL)
 				//decodes the property list
-				restaurants = try plistdecoder.decode([[String:String]].self, from: data)
+				var tmpList = [[String : String]]()
+				tmpList = try plistdecoder.decode([[String:String]].self, from: data)
+				for r in tmpList {
+					let tmpRestaurant: Restaurant = Restaurant(name: r["name"]!, url: r["url"]!)!
+					restaurants.append(tmpRestaurant)
+				}
 			} catch {
 				// handle error
 				print(error)
@@ -35,10 +40,11 @@ class MasterViewController: UITableViewController {
 		/*
 		navigationItem.leftBarButtonItem = editButtonItem
 
+		
 		let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
 		navigationItem.rightBarButtonItem = addButton
-
 		*/
+
 
 		if let split = splitViewController {
 		    let controllers = split.viewControllers
@@ -60,11 +66,11 @@ class MasterViewController: UITableViewController {
 
 	@objc
 	func insertNewObject(_ sender: Any) {
-		objects.insert(NSDate(), at: 0)
+		restaurants.insert(NSDate(), at: 0)
 		let indexPath = IndexPath(row: 0, section: 0)
 		tableView.insertRows(at: [indexPath], with: .automatic)
 	}
-	
+
 	*/
 
 	// MARK: - Segues
@@ -73,8 +79,8 @@ class MasterViewController: UITableViewController {
 		if segue.identifier == "showDetail" {
 		    if let indexPath = tableView.indexPathForSelectedRow {
 		        let restaurant = restaurants[indexPath.row]
-				let url = restaurant["url"]!
-				let name = restaurant["name"]!
+				let url = restaurant.url
+				let name = restaurant.name
 		        let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
 		        controller.detailItem = url as AnyObject?
 				controller.title = name
@@ -98,7 +104,7 @@ class MasterViewController: UITableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
 		let restaurant = restaurants[indexPath.row]
-		cell.textLabel!.text = restaurant["name"]!
+		cell.textLabel!.text = restaurant.name
 		return cell
 	}
 
