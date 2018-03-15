@@ -6,6 +6,22 @@
 //  Copyright © 2018 Ross Blassingame. All rights reserved.
 //
 
+/*
+
+COMPLETED:
+
+1.
+	a. Master shows list of restaurants
+	b. Detail loads website
+	c. Model class
+	d. Loaded from .plist
+2. Delete
+3. Add
+4. Load from .plst
+5. Persistent
+
+*/
+
 import UIKit
 
 class MasterViewController: UITableViewController {
@@ -36,6 +52,8 @@ class MasterViewController: UITableViewController {
 				print(error)
 			}
 		}
+		
+		convertFromListToRestaurants()
 		
 		/*
 		navigationItem.leftBarButtonItem = editButtonItem
@@ -116,6 +134,7 @@ class MasterViewController: UITableViewController {
 	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 		    restaurants.remove(at: indexPath.row)
+			convertRestaurantToArrayAndSave()
 		    tableView.deleteRows(at: [indexPath], with: .fade)
 		} else if editingStyle == .insert {
 		    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -129,11 +148,36 @@ class MasterViewController: UITableViewController {
 		if let sourceViewController = sender.source as? NewRestaurantViewController, let restaurant = sourceViewController.restaurant {
 			//let newIndexPath = IndexPath(row: restaurants.count, section: 0)
 			restaurants.append(restaurant)
+			
+			convertRestaurantToArrayAndSave()
 			//searchHelper()
 			//UserDefaults.standard.set(words, forKey: "words")
 			//tableview?.insertRows(at: [newIndexPath], with: .automatic)
 			
 			tableView.reloadData()
+		}
+	}
+	
+	func convertRestaurantToArrayAndSave() {
+		var restaurantList = [[String]]()
+		for r in restaurants {
+			restaurantList.append([r.name, r.url])
+		}
+		UserDefaults.standard.set(restaurantList, forKey: "midtermRestaurants")
+	}
+	
+	func convertFromListToRestaurants() {
+		if let tmp: [[String]] = UserDefaults.standard.object(forKey: "midtermRestaurants") as? [[String]] {
+			// Successfully loaded
+			print("good")
+			var tmpRestaurants = [Restaurant]()
+			for item in tmp {
+				tmpRestaurants.append(Restaurant(name: item[0], url: item[1])!)
+			}
+			restaurants = tmpRestaurants
+		} else {
+			// Didn't load
+			print("error")
 		}
 	}
 
