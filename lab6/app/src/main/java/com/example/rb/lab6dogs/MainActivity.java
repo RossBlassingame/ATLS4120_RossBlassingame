@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class MainActivity extends Activity implements TypeListFragment.TypeListListener, AnimalDetailFragment.ButtonClickListener {
 
@@ -42,6 +44,22 @@ public class MainActivity extends Activity implements TypeListFragment.TypeListL
     @Override public void addAnimalClicked(View view){
         AnimalDetailFragment fragment = (AnimalDetailFragment)getFragmentManager().findFragmentById(R.id.fragment_container);
         fragment.addAnimal();
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //inflate menu to add items to the action bar
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) { //get the ID of the item on the action bar that was clicked
+        switch (item.getItemId()){
+            case R.id.create_order:
+                //start order activity
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

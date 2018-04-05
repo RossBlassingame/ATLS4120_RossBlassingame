@@ -48,7 +48,7 @@ public class AnimalDetailFragment extends Fragment implements View.OnClickListen
         super.onStart();
 
         View view = getView();
-        ListView listBreeds = (ListView) view.findViewById(R.id.breedlistView);
+        ListView listBreeds = view.findViewById(R.id.breedlistView);
 
         // get animal data
         ArrayList<String> breedList = new ArrayList<String>();
@@ -60,7 +60,7 @@ public class AnimalDetailFragment extends Fragment implements View.OnClickListen
         //bind array adapter to the list view
         listBreeds.setAdapter(adapter);
 
-        Button addAnimalButton = (Button) view.findViewById(R.id.addAnimalButton);
+        Button addAnimalButton = view.findViewById(R.id.addAnimalButton);
         addAnimalButton.setOnClickListener(this);
 
         //register context menu

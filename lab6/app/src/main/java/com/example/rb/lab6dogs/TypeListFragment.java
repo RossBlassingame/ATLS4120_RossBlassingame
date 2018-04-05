@@ -39,7 +39,7 @@ public class TypeListFragment extends Fragment implements AdapterView.OnItemClic
         if (view != null){
             //load data into fragment
             //get the list view
-            ListView listtype = (ListView) view.findViewById(R.id.listView);
+            ListView listtype = view.findViewById(R.id.listView);
             //define an array adapter
             ArrayAdapter<Animal> listAdapter = new ArrayAdapter<Animal>(getActivity(), android.R.layout.simple_list_item_1, Animal.ANIMALS);
             //set the array adapter on the list view
