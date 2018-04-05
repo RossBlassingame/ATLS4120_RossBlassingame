@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lab6Dogs</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_animal_hint">Animal name</string>
+    <string name="add_dialog_title">Add Animal</string>
+</resources>

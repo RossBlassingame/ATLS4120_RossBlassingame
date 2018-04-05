@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rb.lab6dogs.MainActivity">
+
+    <fragment
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:id="@+id/type_frag"
+        android:name="com.example.rb.lab6dogs.TypeListFragment"
+        tools:layout="@layout/fragment_type_list" />
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:name="com.example.rb.lab6Dogs.AnimalDetailFragment"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout="@layout/fragment_animal_detail" />
+
+</android.support.constraint.ConstraintLayout>
