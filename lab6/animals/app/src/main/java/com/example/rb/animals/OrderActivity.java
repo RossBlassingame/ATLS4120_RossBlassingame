@@ -18,6 +18,7 @@ public class OrderActivity extends Activity {
         //get reference to action bar
         ActionBar actionBar = getActionBar();
         //enable the up button
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
     }

@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">animals</string>
-    <string name="bulbs">Bulbs</string>
-    <string-array name="bulb_types">
+    <string name="animals">Animals</string>
+    <string-array name="animal_types">
         <item>Dogs</item>
         <item>Cats</item>
         <item>Horses</item>
     </string-array>
-    <string name="bulb_image">Bulb picture</string>
+    <string name="animal_image">Animal picture</string>
     <string name="create_order">Order</string>
 </resources>

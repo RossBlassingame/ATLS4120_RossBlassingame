@@ -5,8 +5,8 @@ package com.example.rb.animals;
  */
 
 public class Animal {
-    private String name;
-    private int imageResourceID;
+    private final String name;
+    private final int imageResourceID;
 
     //constructor
     private Animal(String newname, int newID){

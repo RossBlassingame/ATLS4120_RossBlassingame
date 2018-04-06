@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/bulbs"
+        android:contentDescription="@string/animals"
 
         app:layout_constraintBottom_toTopOf="@+id/listView"
         app:layout_constraintHorizontal_bias="0.0"
@@ -27,7 +27,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:entries="@array/bulb_types"
+        android:entries="@array/animal_types"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

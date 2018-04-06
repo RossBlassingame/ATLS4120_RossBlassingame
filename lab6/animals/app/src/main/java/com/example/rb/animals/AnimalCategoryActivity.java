@@ -15,37 +15,35 @@ import android.widget.ListView;
 
 public class AnimalCategoryActivity extends ListActivity {
 
-    private String bulbtype;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Intent i = getIntent();
-        bulbtype = i.getStringExtra("bulbtype");
+        String animaltype = i.getStringExtra("animaltype");
 
         //get the list view
-        ListView listBulbs = getListView();
+        ListView listAnimals = getListView();
 
         //define an array adapter
         ArrayAdapter<Animal> listAdapter;
 
-        //initialize the array adapter with the right list of bulbs
-        switch (bulbtype){
+        //initialize the array adapter with the right list of animals
+        switch (animaltype){
             case "Dogs":
-                listAdapter = new ArrayAdapter<Animal>(this, android.R.layout.simple_list_item_1, Animal.dogs);
+                listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Animal.dogs);
                 break;
-            default: listAdapter = new ArrayAdapter<Animal>(this, android.R.layout.simple_list_item_1, Animal.dogs);
+            default: listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Animal.dogs);
         }
 
         //set the array adapter on the list view
-        listBulbs.setAdapter(listAdapter);
+        listAnimals.setAdapter(listAdapter);
     }
 
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id){
         Intent intent = new Intent(AnimalCategoryActivity.this, AnimalActivity.class);
-        intent.putExtra("bulbid", (int) id);
+        intent.putExtra("animalid", (int) id);
         startActivity(intent);
     }
 

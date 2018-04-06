@@ -19,17 +19,17 @@ public class AnimalActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal);
 
-        //get bulb id from the intent
-        int animalnum = (Integer)getIntent().getExtras().get("bulbid");
+        //get animal id from the intent
+        int animalnum = (Integer)getIntent().getExtras().get("animalid");
         Animal beast = Animal.dogs[animalnum];
 
         //populate image
-        ImageView bulbImage = (ImageView)findViewById(R.id.bulbImageView);
-        bulbImage.setImageResource(beast.getImageResourceID());
+        ImageView animalImage = findViewById(R.id.animalImageView);
+        animalImage.setImageResource(beast.getImageResourceID());
 
         //populate name
-        TextView bulbName = (TextView)findViewById(R.id.bulb_name);
-        bulbName.setText(beast.getName());
+        TextView animalName = findViewById(R.id.animal_name);
+        animalName.setText(beast.getName());
     }
 
     @Override

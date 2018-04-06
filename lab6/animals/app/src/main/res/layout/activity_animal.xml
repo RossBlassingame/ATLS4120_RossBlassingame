@@ -7,7 +7,7 @@
     tools:context="com.example.rb.animals.AnimalActivity">
 
     <TextView
-        android:id="@+id/bulb_name"
+        android:id="@+id/animal_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -17,16 +17,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/bulbImageView"
+        android:id="@+id/animalImageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:contentDescription="@string/bulb_image"
+        android:contentDescription="@string/animal_image"
         android:scaleType="fitCenter"
         android:src="@drawable/basenji"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bulb_name" />
+        app:layout_constraintTop_toBottomOf="@+id/animal_name" />
 </android.support.constraint.ConstraintLayout>
