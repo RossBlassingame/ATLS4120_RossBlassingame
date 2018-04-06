@@ -30,7 +30,7 @@ public class Animal {
         return imageResourceID;
     }
 
-    //the string representation of a tulip is its name
+    //the string representation of a dog is its name
     public String toString(){
         return this.name;
     }
