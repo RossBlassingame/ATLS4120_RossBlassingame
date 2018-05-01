@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">books</string>
+    <string name="books">Books</string>
+    <string-array name="book_types">
+        <item>Fiction</item>
+        <item>Nonfiction</item>
+    </string-array>
+    <string name="book_image">Book picture</string>
+    <string name="create_order">Order</string>
+</resources>

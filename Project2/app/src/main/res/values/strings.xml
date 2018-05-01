@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">bookList</string>
+    <string name="btn">Save</string>
+    <string name="editTxt">Title</string>
+</resources>
