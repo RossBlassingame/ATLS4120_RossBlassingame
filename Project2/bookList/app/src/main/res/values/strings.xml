@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">bookList</string>
     <string name="btn">Save</string>
-    <string name="editTxt">Title</string>
+    <string name="editTxt">New Book Title</string>
+    <string name="bookTitle">Title</string>
+    <string name="bookEditTxt">Add notes here!</string>
 </resources>

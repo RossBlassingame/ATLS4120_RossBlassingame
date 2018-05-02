@@ -1,5 +1,7 @@
 package com.example.rb.booklist;
+import android.content.Intent;
 import android.util.Log;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import java.lang.reflect.Array;
@@ -31,6 +33,37 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> itemList;
     protected void onCreate(Bundle savedInstanceState) {
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+
+
+
+
+        //create listener
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> listView, View view, int position, long id){
+                String booktype = (String) listView.getItemAtPosition(position);
+                //create new intent
+                Intent intent = new Intent(MainActivity.this, BookActivity.class);
+                //add booktype to intent
+                intent.putExtra("bookTitle", booktype);
+                //start intent
+                startActivity(intent);
+            }
+        };
+
+        //get the list view
+        ListView listview = findViewById(R.id.listView);
+        //add listener to the list view
+        listview.setOnItemClickListener(itemClickListener);
+
+
+
+
+
+
         List<String> tmpItems = retrievePrefs();
         if (tmpItems != null) {
             Log.i("ROSS", tmpItems.toString());
@@ -43,10 +76,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Log.i("ROSS", "Below ELSE");
-
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         adapter=new ArrayAdapter<String>(this, R.layout.list, R.id.txtitem, itemList);
         ListView listV=(ListView)findViewById(R.id.listView);
