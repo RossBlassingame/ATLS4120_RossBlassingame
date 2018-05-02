@@ -20,8 +20,10 @@ import android.os.Bundle;
 
 
 /*
-* NEXT STEPS:
-* - when a title/row is clicked, delete it from the list
+* This is an app which allows me to keep track of the books I've read/want to read, because
+* I always have a hard time remembering what I wanted to read next. This app also lets you take
+* notes on books you've already read so you can remember important details. Everything is
+* persistent.
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -35,11 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-
-
 
         //create listener
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener(){
@@ -58,11 +55,6 @@ public class MainActivity extends AppCompatActivity {
         ListView listview = findViewById(R.id.listView);
         //add listener to the list view
         listview.setOnItemClickListener(itemClickListener);
-
-
-
-
-
 
         List<String> tmpItems = retrievePrefs();
         if (tmpItems != null) {

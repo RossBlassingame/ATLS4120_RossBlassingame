@@ -5,23 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import android.widget.Toast;
-
 import android.view.View;
 
-/**
- * Created by rb on 5/2/18.
- */
 
 public class BookActivity extends Activity {
 
@@ -50,8 +38,6 @@ public class BookActivity extends Activity {
         else {
             Log.i("ROSS", "IN ELSE");
         }
-
-
     }
 
     String retrievePrefs(String title) {
