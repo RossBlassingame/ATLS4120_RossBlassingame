@@ -13,10 +13,13 @@ import android.view.View;
 
 public class BookActivity extends Activity {
 
-    public static final String MY_PREFS_NAME = "persis_prefs_1";
+    public static final String MY_PREFS_NAME = "persis_prefs_2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Log.i("ONCREATE:", "START");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
@@ -37,6 +40,7 @@ public class BookActivity extends Activity {
         }
         else {
             Log.i("ROSS", "IN ELSE");
+            notes.setText("");
         }
     }
 

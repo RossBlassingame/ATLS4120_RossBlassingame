@@ -28,7 +28,7 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String MY_PREFS_NAME = "persis_prefs_1";
+    public static final String MY_PREFS_NAME = "persis_prefs_2";
 
     ArrayAdapter<String> adapter;
     EditText editText;
@@ -96,7 +96,10 @@ public class MainActivity extends AppCompatActivity {
         Set<String> restoredText = prefs.getStringSet("text", null);
 
         List<String> retItems = new ArrayList<String>();
-        retItems.addAll(restoredText);
+
+        if (restoredText != null) {
+            retItems.addAll(restoredText);
+        }
 
         return retItems;
     }
