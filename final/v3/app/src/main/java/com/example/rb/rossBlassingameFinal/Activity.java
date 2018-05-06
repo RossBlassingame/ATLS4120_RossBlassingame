@@ -1,10 +1,10 @@
-package com.example.aileen.superheroes;
+package com.example.rb.rossBlassingameFinal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Created by aileen on 4/2/18.
+ * Created by rb on 4/2/18.
  */
 
 public class Activity {
