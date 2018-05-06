@@ -5,7 +5,9 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -18,12 +20,17 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HeroDetailFragment extends Fragment implements View.OnClickListener {
+
+    public static final String MY_PREFS_NAME = "persis_prefs_1";
 
     // array adapter
     private ArrayAdapter<String> adapter;
@@ -52,8 +59,16 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
         ListView listHeroes = (ListView) view.findViewById(R.id.herolistView);
 
         // get hero data
-        ArrayList<String> herolist = new ArrayList<String>();
-        herolist = Hero.heroes[(int) universeId].getSuperheroes();
+        List<String> herolist = new ArrayList<String>();
+
+        herolist = retrievePrefs(Activity.activities[(int) universeId].getType());
+        //herolist = Activity.activities[(int) universeId].getActivityList();
+
+        Log.i("ROSS", herolist.toString());
+
+        if (herolist.isEmpty() || herolist == null) {
+            herolist = Activity.activities[(int) universeId].getActivityList();
+        }
 
         //set array adapter
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, herolist);
@@ -109,7 +124,7 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
         dialog.setView(edittext);
 
         //set dialog title
-        dialog.setTitle("Add Hero");
+        dialog.setTitle("Add Activity");
 
         //sets OK action
         dialog.setPositiveButton("Add", new DialogInterface.OnClickListener() {
@@ -118,7 +133,9 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
                 String heroName = edittext.getText().toString();
                 if(!heroName.isEmpty()){
                     // add hero
-                    Hero.heroes[(int) universeId].getSuperheroes().add(heroName);
+                    Activity.activities[(int) universeId].getActivityList().add(heroName);
+                    // persist activities
+                    setPrefs(Activity.activities[(int) universeId].getType(), Activity.activities[(int) universeId].getActivityList());
                     //refresh the list view
                     HeroDetailFragment.this.adapter.notifyDataSetChanged();
                 }
@@ -156,11 +173,52 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
             //get the position of the menu item
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
             //remove the hero
-            Hero.heroes[(int) universeId].getSuperheroes().remove(info.position);
+            Activity.activities[(int) universeId].getActivityList().remove(info.position);
             //refresh the list view
             HeroDetailFragment.this.adapter.notifyDataSetChanged();
         }
         return true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    List<String> retrievePrefs(String type) {
+        SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, getActivity().MODE_PRIVATE);
+
+        Set<String> restoredText = prefs.getStringSet(type, null);
+
+        List<String> retItems = new ArrayList<String>();
+
+        if (restoredText != null) {
+            retItems.addAll(restoredText);
+        }
+
+        return retItems;
+    }
+
+    void setPrefs(String type, ArrayList<String> text) {
+        Set<String> itemSet = new HashSet<>();
+        itemSet.addAll(text);
+
+        SharedPreferences.Editor editor = getActivity().getSharedPreferences(MY_PREFS_NAME, getActivity().MODE_PRIVATE).edit();
+        editor.putStringSet(type, itemSet);
+        editor.apply();
     }
 
 }
