@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-
 AILEEN - PLEASE READ
 
 Here's what I've implemented:
@@ -28,8 +27,6 @@ Here's what I've implemented:
 
 For some reason lists don't update immediately so you must go out/back in to see changes
 (add/delete)
-
-
  */
 
 public class MainActivity extends android.app.Activity implements TypeListFragment.UniverseListListener, ActivityDetailFragment.ButtonClickListener {
