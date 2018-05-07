@@ -16,9 +16,30 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/*
+
+AILEEN - PLEASE READ
+
+Here's what I've implemented:
+1. a, b, c, d, e
+2. (add)
+4. (open related website)
+5. (persistent using SharedPreferences)
+7. (fragments)
+
+
+
+
+
+
+
+
+
+ */
+
 public class MainActivity extends android.app.Activity implements UniverseListFragment.UniverseListListener, HeroDetailFragment.ButtonClickListener {
 
-    public static final String MY_PREFS_NAME = "persis_prefs_2";
+    public static final String MY_PREFS_NAME = "persis_prefs_3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

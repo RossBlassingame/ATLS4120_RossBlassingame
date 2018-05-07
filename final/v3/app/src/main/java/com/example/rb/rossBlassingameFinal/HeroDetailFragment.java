@@ -37,7 +37,7 @@ import android.content.Intent;
  */
 public class HeroDetailFragment extends Fragment implements View.OnClickListener {
 
-    public static final String MY_PREFS_NAME = "persis_prefs_2";
+    public static final String MY_PREFS_NAME = "persis_prefs_3";
 
     // array adapter
     private ArrayAdapter<String> adapter;
@@ -162,9 +162,9 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
                     Activity.activities[(int) universeId].getActivityList().add(new ActivityWithURL(heroName, "google.com"));
                     // persist activities
                     setPrefs(Activity.activities[(int) universeId].getType(), Activity.activities[(int) universeId].getActivityList());
-                    //refresh the list view
-                    HeroDetailFragment.this.adapter.notifyDataSetChanged();
                 }
+                //refresh the list view
+                HeroDetailFragment.this.adapter.notifyDataSetChanged();
             }
         });
 
@@ -199,7 +199,12 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
             //get the position of the menu item
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
             //remove the hero
+            Log.i("ROSS", Activity.activities[(int) universeId].getActivityList().toString());
             Activity.activities[(int) universeId].getActivityList().remove(info.position);
+
+            // persist activities
+            setPrefs(Activity.activities[(int) universeId].getType(), Activity.activities[(int) universeId].getActivityList());
+
             //refresh the list view
             HeroDetailFragment.this.adapter.notifyDataSetChanged();
         }
