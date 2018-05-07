@@ -15,10 +15,10 @@ import android.widget.ListView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UniverseListFragment extends Fragment implements AdapterView.OnItemClickListener{
+public class TypeListFragment extends Fragment implements AdapterView.OnItemClickListener{
 
 
-    public UniverseListFragment() {
+    public TypeListFragment() {
         // Required empty public constructor
     }
 

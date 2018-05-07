@@ -10,7 +10,7 @@
         android:layout_width="150dp"
         android:layout_height="match_parent"
         android:id="@+id/universe_frag"
-        android:name="com.example.rb.rossBlassingameFinal.UniverseListFragment"
+        android:name="com.example.rb.rossBlassingameFinal.TypeListFragment"
         tools:layout="@layout/fragment_universe_list" />
 
 

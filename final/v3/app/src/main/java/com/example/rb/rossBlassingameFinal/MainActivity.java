@@ -12,9 +12,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /*
 
@@ -28,18 +26,13 @@ Here's what I've implemented:
 5. (persistent using SharedPreferences)
 7. (fragments)
 
-
-
 For some reason lists don't update immediately so you must go out/back in to see changes
 (add/delete)
 
 
-
-
-
  */
 
-public class MainActivity extends android.app.Activity implements UniverseListFragment.UniverseListListener, HeroDetailFragment.ButtonClickListener {
+public class MainActivity extends android.app.Activity implements TypeListFragment.UniverseListListener, ActivityDetailFragment.ButtonClickListener {
 
     public static final String MY_PREFS_NAME = "persis_prefs_3";
 
@@ -52,7 +45,7 @@ public class MainActivity extends android.app.Activity implements UniverseListFr
 
     @Override public void itemClicked(long id){
         //create new fragment instance
-        HeroDetailFragment frag = new HeroDetailFragment();
+        ActivityDetailFragment frag = new ActivityDetailFragment();
         //set the id of the universe selected
         frag.setUniverse(id);
 
@@ -77,7 +70,7 @@ public class MainActivity extends android.app.Activity implements UniverseListFr
     }
 
     @Override public void addheroclicked(View view){
-        HeroDetailFragment fragment = (HeroDetailFragment)getFragmentManager().findFragmentById(R.id.fragment_container);
+        ActivityDetailFragment fragment = (ActivityDetailFragment)getFragmentManager().findFragmentById(R.id.fragment_container);
         fragment.addhero();
     }
 

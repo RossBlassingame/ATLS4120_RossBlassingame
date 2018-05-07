@@ -20,9 +20,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
@@ -35,7 +34,7 @@ import android.content.Intent;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HeroDetailFragment extends Fragment implements View.OnClickListener {
+public class ActivityDetailFragment extends Fragment implements View.OnClickListener {
 
     public static final String MY_PREFS_NAME = "persis_prefs_3";
 
@@ -45,7 +44,7 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
     //id of the universe chosen
     private long universeId;
 
-    public HeroDetailFragment() {
+    public ActivityDetailFragment() {
         // Required empty public constructor
     }
 
@@ -164,7 +163,7 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
                     setPrefs(Activity.activities[(int) universeId].getType(), Activity.activities[(int) universeId].getActivityList());
                 }
                 //refresh the list view
-                HeroDetailFragment.this.adapter.notifyDataSetChanged();
+                ActivityDetailFragment.this.adapter.notifyDataSetChanged();
             }
         });
 
@@ -206,7 +205,7 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
             setPrefs(Activity.activities[(int) universeId].getType(), Activity.activities[(int) universeId].getActivityList());
 
             //refresh the list view
-            HeroDetailFragment.this.adapter.notifyDataSetChanged();
+            ActivityDetailFragment.this.adapter.notifyDataSetChanged();
         }
         return true;
     }
