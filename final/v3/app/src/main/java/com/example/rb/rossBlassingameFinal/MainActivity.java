@@ -23,13 +23,15 @@ AILEEN - PLEASE READ
 Here's what I've implemented:
 1. a, b, c, d, e
 2. (add)
+3. (delete)
 4. (open related website)
 5. (persistent using SharedPreferences)
 7. (fragments)
 
 
 
-
+For some reason lists don't update immediately so you must go out/back in to see changes
+(add/delete)
 
 
 
