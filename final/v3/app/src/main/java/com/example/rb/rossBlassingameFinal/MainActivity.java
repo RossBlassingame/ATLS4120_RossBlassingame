@@ -1,10 +1,16 @@
 package com.example.rb.rossBlassingameFinal;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -12,7 +18,7 @@ import java.util.Set;
 
 public class MainActivity extends android.app.Activity implements UniverseListFragment.UniverseListListener, HeroDetailFragment.ButtonClickListener {
 
-    public static final String MY_PREFS_NAME = "persis_prefs_1";
+    public static final String MY_PREFS_NAME = "persis_prefs_2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,37 +58,40 @@ public class MainActivity extends android.app.Activity implements UniverseListFr
         fragment.addhero();
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    List<String> retrievePrefs() {
-        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
-
-        Set<String> restoredText = prefs.getStringSet("text", null);
-
-        List<String> retItems = new ArrayList<String>();
-
-        if (restoredText != null) {
-            retItems.addAll(restoredText);
-        }
-
-        return retItems;
+    public void yoloOnClick(View view) {
+        Uri uri = Uri.parse("http://www.google.com"); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 
-    void setPrefs(ArrayList<String> text) {
-        Set<String> itemSet = new HashSet<>();
-        itemSet.addAll(text);
+
+
+
+
+
+
+
+
+
+
+    List<ActivityWithURL> retrievePrefs(String type) {
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+
+        String restoredText = prefs.getString(type, null);
+
+        Type gsonType = new TypeToken< List < ActivityWithURL >>() {}.getType();
+        List < ActivityWithURL > actitiesWithURLs = new Gson().fromJson(restoredText, gsonType);
+
+
+        return actitiesWithURLs;
+    }
+
+    void setPrefs(String type, ArrayList<ActivityWithURL> activities) {
+
+        String JSONstring = new Gson().toJson(activities);
 
         SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-        editor.putStringSet("text", itemSet);
+        editor.putString(type, JSONstring);
         editor.apply();
     }
 

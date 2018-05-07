@@ -23,6 +23,13 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+import android.widget.AdapterView.OnItemClickListener;
+
+import android.net.Uri;
+import android.content.Intent;
 
 
 /**
@@ -30,7 +37,7 @@ import java.util.Set;
  */
 public class HeroDetailFragment extends Fragment implements View.OnClickListener {
 
-    public static final String MY_PREFS_NAME = "persis_prefs_1";
+    public static final String MY_PREFS_NAME = "persis_prefs_2";
 
     // array adapter
     private ArrayAdapter<String> adapter;
@@ -59,22 +66,41 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
         ListView listHeroes = (ListView) view.findViewById(R.id.herolistView);
 
         // get hero data
-        List<String> herolist = new ArrayList<String>();
+        List<ActivityWithURL> herolist = new ArrayList<ActivityWithURL>();
 
         herolist = retrievePrefs(Activity.activities[(int) universeId].getType());
         //herolist = Activity.activities[(int) universeId].getActivityList();
 
-        Log.i("ROSS", herolist.toString());
-
-        if (herolist.isEmpty() || herolist == null) {
+        if (herolist == null) {
             herolist = Activity.activities[(int) universeId].getActivityList();
         }
 
+        List<String> heroListNamesOnly = new ArrayList<>();
+        for (ActivityWithURL a : herolist) {
+            heroListNamesOnly.add(a.getActivityName());
+        }
+
         //set array adapter
-        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, herolist);
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, heroListNamesOnly);
 
         //bind array adapter to the list view
         listHeroes.setAdapter(adapter);
+
+        listHeroes.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+                                    long arg3) {
+
+                String name = Activity.activities[(int) universeId].getActivityList().get((int) arg3).getActivityName();
+
+
+                Uri uri = Uri.parse("http://www.google.com/search?client=safari&rls=en&q=" + name.toString()); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+
+        });
 
         Button addHeroButton = (Button) view.findViewById(R.id.addHeroButton);
         addHeroButton.setOnClickListener(this);
@@ -133,7 +159,7 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
                 String heroName = edittext.getText().toString();
                 if(!heroName.isEmpty()){
                     // add hero
-                    Activity.activities[(int) universeId].getActivityList().add(heroName);
+                    Activity.activities[(int) universeId].getActivityList().add(new ActivityWithURL(heroName, "google.com"));
                     // persist activities
                     setPrefs(Activity.activities[(int) universeId].getType(), Activity.activities[(int) universeId].getActivityList());
                     //refresh the list view
@@ -198,26 +224,25 @@ public class HeroDetailFragment extends Fragment implements View.OnClickListener
 
 
 
-    List<String> retrievePrefs(String type) {
+    List<ActivityWithURL> retrievePrefs(String type) {
+
         SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, getActivity().MODE_PRIVATE);
 
-        Set<String> restoredText = prefs.getStringSet(type, null);
+        String restoredText = prefs.getString(type, null);
 
-        List<String> retItems = new ArrayList<String>();
+        Type gsonType = new TypeToken < List < ActivityWithURL >> () {}.getType();
+        List < ActivityWithURL > actitiesWithURLs = new Gson().fromJson(restoredText, gsonType);
 
-        if (restoredText != null) {
-            retItems.addAll(restoredText);
-        }
 
-        return retItems;
+        return actitiesWithURLs;
     }
 
-    void setPrefs(String type, ArrayList<String> text) {
-        Set<String> itemSet = new HashSet<>();
-        itemSet.addAll(text);
+    void setPrefs(String type, ArrayList<ActivityWithURL> activities) {
+
+        String JSONstring = new Gson().toJson(activities);
 
         SharedPreferences.Editor editor = getActivity().getSharedPreferences(MY_PREFS_NAME, getActivity().MODE_PRIVATE).edit();
-        editor.putStringSet(type, itemSet);
+        editor.putString(type, JSONstring);
         editor.apply();
     }
 
